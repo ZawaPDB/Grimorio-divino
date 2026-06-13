@@ -7988,6 +7988,29 @@
     }
     /* respeta accesibilidad: sin animación si el usuario la desactiva */
     .no-motion body, body.no-motion{transition:none !important;}
+    /* Indicador "en vivo" de los datos */
+    .altar-live-source.viva::before{
+      background:#3ad17a !important;
+      box-shadow:0 0 10px rgba(58,209,122,.9);
+      animation:pulsoVivo 1.8s ease-in-out infinite;
+    }
+    @keyframes pulsoVivo{
+      0%,100%{opacity:1; transform:scale(1)}
+      50%{opacity:.45; transform:scale(.7)}
+    }
+    /* Pulso vivo en el ONLINE del Reino */
+    .status-pill.on::before{
+      content:""; display:inline-block; width:8px; height:8px; border-radius:50%;
+      background:#fff; margin-right:7px; vertical-align:middle;
+      box-shadow:0 0 8px rgba(255,255,255,.9);
+      animation:pulsoVivo 1.6s ease-in-out infinite;
+    }
+    .path-where{
+      display:block; margin-top:8px; font:700 10px/1.3 "Courier New",monospace;
+      letter-spacing:.08em; text-transform:uppercase; color:var(--cyan);
+      opacity:.85;
+    }
+    .path-card code{ display:inline-block; }
   </style>
 </head>
 <body>
@@ -8288,13 +8311,15 @@
           <div class="kicker">Primeros pasos del viajero</div>
           <h2 id="ruta-title">La Senda del Viajero</h2>
         </div>
-        <p>Todo viajero comienza igual: abre el mapa, mira su fortuna, aprende a ganar poder y solo entonces decide si cruza hacia los rituales, las batallas o las sombras.</p>
+        <p>¿Primera vez en el Reino? Aquí empieza tu camino. Cada poder se invoca escribiendo su palabra <b>en el chat del directo</b> (Twitch o Kick). Si un poder te confunde, pregúntale al grimorio con <code>!info</code>; si quieres ver una rama completa, ábrela con <code>!PZ</code>. Estos son tus primeros pasos.</p>
       </div>
       <div class="path-grid">
-        <article class="path-card"><b>01</b><h3>Abre el mapa</h3><p>El primer comando para entender todo el sistema y ver las rutas disponibles.</p><code>!zmap</code></article>
-        <article class="path-card"><b>02</b><h3>Consulta tu poder</h3><p>Revisa tus FPZ antes de apostar, abrir cofres, invocar a Rah o entrar al mercado.</p><code>!wacal</code></article>
-        <article class="path-card"><b>03</b><h3>Participa en el reino</h3><p>Gana FPZ con cofres, duelos, ruleta, misiones y eventos activos.</p><code>!cofre</code></article>
-        <article class="path-card"><b>04</b><h3>Entra al ritual</h3><p>Cuando ya entiendas las reglas, reta al destino y deja que el chat decida.</p><code>!SalRah</code></article>
+        <article class="path-card"><b>01</b><h3>Abre el mapa</h3><p>Tu punto de partida: muestra todas las rutas del reino y por dónde puedes ir.</p><code>!zmap</code><span class="path-where">⌨ Escríbelo en el chat del directo</span></article>
+        <article class="path-card"><b>02</b><h3>Despliega un pergamino</h3><p>Abre una rama completa de poderes. Ej: <code>!PZ fotopatas</code>, <code>!PZ rituales</code>, <code>!PZ sombras</code>.</p><code>!PZ [rama]</code><span class="path-where">⌨ En el chat del directo</span></article>
+        <article class="path-card"><b>03</b><h3>Pregunta por un poder</h3><p>¿No sabes qué hace algo? El grimorio te lo explica. Ej: <code>!info cofre</code>, <code>!info robar</code>.</p><code>!info [poder]</code><span class="path-where">⌨ En el chat del directo</span></article>
+        <article class="path-card"><b>04</b><h3>Consulta tu poder</h3><p>Revisa tus FPZ antes de apostar, abrir cofres, invocar a Rah o entrar al mercado.</p><code>!wacal</code><span class="path-where">⌨ En el chat del directo</span></article>
+        <article class="path-card"><b>05</b><h3>Participa y gana</h3><p>Consigue FPZ con cofres, duelos, ruleta, misiones y los eventos activos del reino.</p><code>!cofre</code><span class="path-where">⌨ En el chat del directo</span></article>
+        <article class="path-card"><b>06</b><h3>Entra al ritual</h3><p>Cuando domines las reglas, reta al destino y deja que el chat decida tu suerte.</p><code>!SalRah</code><span class="path-where">⌨ En el chat del directo</span></article>
       </div>
     </section>
 <section class="section zawa-senda-core" id="senda-nucleo">
@@ -10526,10 +10551,27 @@ Exigencias
 
       const source = document.getElementById('altarLiveSource');
       if(source){
-        const label = data.source === 'twitch' ? 'Esperando datos de Twitch' : 'Datos del Reino';
-        source.textContent = label;
+        window.__zawaUltimaActualizacion = Date.now();
+        source.classList.add('viva');
+        zawaActualizarSello();
       }
     }
+
+    // Sello "actualizado hace X" que se refresca solo
+    function zawaActualizarSello(){
+      const source = document.getElementById('altarLiveSource');
+      if(!source || !window.__zawaUltimaActualizacion) return;
+      const seg = Math.round((Date.now() - window.__zawaUltimaActualizacion) / 1000);
+      let cuando;
+      if(seg < 8)        cuando = 'ahora mismo';
+      else if(seg < 60)  cuando = `hace ${seg}s`;
+      else {
+        const min = Math.round(seg/60);
+        cuando = `hace ${min} min`;
+      }
+      source.textContent = `Sincronizado con Twitch · ${cuando}`;
+    }
+    setInterval(zawaActualizarSello, 5000);
 
     async function zawaLoadAltaresTwitch(){
       try{
