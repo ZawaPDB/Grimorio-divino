@@ -7945,6 +7945,49 @@
       letter-spacing:.12em;
     }
 
+
+    /* ══ EL REINO DESPIERTA (online) — bordes/brillos/acentos encendidos ══ */
+    body{transition:background-color .9s ease, filter .9s ease;}
+    /* halo dorado cálido envolviendo la página cuando estás en vivo */
+    body.reino-despierto::after{
+      opacity:1 !important;
+      background-image:
+        radial-gradient(circle at 50% -5%, rgba(255,176,46,.16), transparent 60%),
+        radial-gradient(1px 1px at 22% 28%, rgba(255,255,255,.7), transparent),
+        radial-gradient(1px 1px at 52% 72%, rgba(255,221,150,.7), transparent),
+        radial-gradient(1px 1px at 73% 38%, rgba(255,255,255,.7), transparent),
+        radial-gradient(1px 1px at 38% 55%, rgba(255,235,210,.7), transparent),
+        radial-gradient(1px 1px at 85% 80%, rgba(255,255,255,.6), transparent),
+        radial-gradient(1px 1px at 15% 70%, rgba(255,221,150,.6), transparent);
+    }
+    /* acentos: los bordes cian/dorado se encienden con calidez */
+    body.reino-despierto .nav a,
+    body.reino-despierto .nav button,
+    body.reino-despierto .tiny-btn{
+      border-color:rgba(255,209,102,.55);
+      box-shadow:0 0 14px rgba(255,176,46,.22);
+    }
+    body.reino-despierto .brand-mark{
+      box-shadow:0 0 22px rgba(255,176,46,.45);
+      border-color:rgba(255,209,102,.8) !important;
+    }
+    body.reino-despierto .kicker{
+      color:#ffe08a;
+      text-shadow:0 0 22px rgba(255,176,46,.5);
+    }
+    /* las tarjetas y altares ganan un borde cálido vivo */
+    body.reino-despierto .spell-card,
+    body.reino-despierto .altar-card,
+    body.reino-despierto .glory-card,
+    body.reino-despierto .zawa-pro-card{
+      box-shadow:0 0 18px rgba(255,176,46,.16), inset 0 0 0 1px rgba(255,209,102,.18) !important;
+    }
+    /* el portal/logo y los portales sociales brillan un poco más */
+    body.reino-despierto .zawa-portal-icons a{
+      filter:drop-shadow(0 3px 0 rgba(0,0,0,.45)) drop-shadow(0 0 12px rgba(255,176,46,.4));
+    }
+    /* respeta accesibilidad: sin animación si el usuario la desactiva */
+    .no-motion body, body.no-motion{transition:none !important;}
   </style>
 </head>
 <body>
@@ -10349,6 +10392,7 @@ Exigencias
       const online = twitchOnline || kickOnline;
 
       root.dataset.state = online ? 'online' : 'offline';
+      document.body.classList.toggle('reino-despierto', online);
       pill.textContent = online ? 'ONLINE' : 'OFFLINE';
       pill.classList.toggle('on', online);
       pill.classList.toggle('off', !online);
