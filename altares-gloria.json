@@ -12,38 +12,12 @@
     }
   ],
   "seresDivinos": {
-    "dioses": [
-      {
-        "name": "Lur3n_"
-      },
-      {
-        "name": "lobo0620"
-      },
-      {
-        "name": "Mr_noob2212"
-      }
-    ],
+    "dioses": [],
     "titanes": [],
     "primordiales": []
   },
   "heraldosGloria": [],
   "forjadoresTesoro": [],
-  "guardianes": [
-    {
-      "name": "lilithxxer00_",
-      "role": "Moderador",
-      "photo": ""
-    },
-    {
-      "name": "RestreamBot",
-      "role": "Moderador",
-      "photo": ""
-    },
-    {
-      "name": "EdGhost21",
-      "role": "Moderador",
-      "photo": ""
-    }
-  ],
+  "guardianes": [],
   "rachasGloria": []
 }
