@@ -1,16 +1,7 @@
 {
   "source": "twitch",
   "weekLabel": "Semana del Reino",
-  "mesias": [
-    {
-      "name": "Numichi",
-      "status": "VIP activo"
-    },
-    {
-      "name": "lobo0620",
-      "status": "VIP activo"
-    }
-  ],
+  "mesias": [],
   "seresDivinos": {
     "dioses": [],
     "titanes": [],
