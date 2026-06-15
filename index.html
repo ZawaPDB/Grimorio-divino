@@ -7664,17 +7664,18 @@
       min-height:120px;
       padding:18px;
       background:
-        radial-gradient(circle at 13% 25%, rgba(145,255,114,.10), transparent 13rem),
+        radial-gradient(circle at 13% 25%, rgba(159,88,255,.08), transparent 13rem),
         linear-gradient(90deg, rgba(7,4,16,.78), rgba(17,8,31,.72));
       border:2px solid rgba(255,255,255,.15);
       box-shadow:6px 6px 0 rgba(0,0,0,.34);
     }
 
     .kingdom-live-state[data-state="online"]{
-      border-color:rgba(145,255,114,.46);
+      border-color:rgba(159,88,255,.5);
       box-shadow:
         6px 6px 0 rgba(0,0,0,.34),
-        0 0 22px rgba(145,255,114,.13);
+        0 0 22px rgba(255,209,102,.14),
+        0 0 30px rgba(159,88,255,.12);
     }
 
     .kingdom-live-rune{
@@ -7686,20 +7687,58 @@
       border:2px solid rgba(255,255,255,.18);
       box-shadow:
         5px 5px 0 rgba(0,0,0,.40),
-        0 0 18px rgba(103,255,231,.10);
-      color:var(--cyan);
-      font:1000 32px/1 "Courier New",monospace;
-      transition:color .28s ease, border-color .28s ease, filter .28s ease;
+        0 0 18px rgba(159,88,255,.10);
+      transition:border-color .28s ease, filter .28s ease;
     }
 
     .kingdom-live-state[data-state="online"] .kingdom-live-rune{
-      color:var(--green);
-      border-color:rgba(145,255,114,.55);
-      filter:drop-shadow(0 0 14px rgba(145,255,114,.36));
+      border-color:rgba(255,209,102,.55);
+      filter:drop-shadow(0 0 14px rgba(159,88,255,.45)) drop-shadow(0 0 8px rgba(255,209,102,.35));
       animation:kingdomPulseRune 1.8s ease-in-out infinite;
     }
 
+    /* ---------- icono del Ojo de Zawa ---------- */
+    .kingdom-eye-icon{
+      width:46px;
+      height:42px;
+      display:block;
+      overflow:visible;
+    }
+
+    .kingdom-eye-icon .eye-outline,
+    .kingdom-eye-icon .eye-lid{
+      fill:none;
+      stroke:var(--dim);
+      stroke-width:8;
+      stroke-linecap:round;
+      transition:stroke .28s ease;
+    }
+
+    .kingdom-eye-icon .eye-pupil{
+      fill:var(--dim);
+      transition:fill .28s ease;
+    }
+
+    .kingdom-eye-icon .eye-glint{
+      fill:var(--void);
+    }
+
+    .kingdom-eye-icon .eye-open{ display:none; }
+    .kingdom-eye-icon .eye-closed{ display:block; }
+
+    .kingdom-live-state[data-state="online"] .kingdom-eye-icon .eye-open{ display:block; }
+    .kingdom-live-state[data-state="online"] .kingdom-eye-icon .eye-closed{ display:none; }
+
+    .kingdom-live-state[data-state="online"] .kingdom-eye-icon .eye-outline{
+      stroke:var(--violet);
+    }
+
+    .kingdom-live-state[data-state="online"] .kingdom-eye-icon .eye-pupil{
+      fill:var(--gold);
+    }
+
     @keyframes kingdomPulseRune{
+
       0%,100%{transform:scale(1);opacity:.86}
       50%{transform:scale(1.08);opacity:1}
     }
@@ -7726,12 +7765,12 @@
     }
 
     .kingdom-live-state[data-state="online"] .status-pill{
-      color:#071207;
-      background:var(--green);
+      color:#241406;
+      background:var(--gold);
       border-color:rgba(255,255,255,.72);
       box-shadow:
         4px 4px 0 rgba(0,0,0,.34),
-        0 0 16px rgba(145,255,114,.24);
+        0 0 16px rgba(159,88,255,.30);
     }
 
     @media (max-width:720px){
@@ -7742,7 +7781,11 @@
       .kingdom-live-rune{
         width:58px;
         height:58px;
-        font-size:26px;
+      }
+
+      .kingdom-eye-icon{
+        width:38px;
+        height:35px;
       }
 
       .kingdom-live-state .status-pill{
@@ -8102,7 +8145,6 @@
 
             <div class="zawa-mods-panel" aria-label="Mods destacados del sello">
               <strong>EdGhost</strong>
-              <strong>_Lilithxxer.00_</strong>
             </div>
 </div>
           <div class="codex-hint">acércate al sello y las runas responderán</div>
@@ -8333,16 +8375,27 @@
 
       <div class="senda-main-grid">
 
-        <article class="zawa-pro-card status-orb-card kingdom-pulse-card" style="--pro-color:var(--green)">
+        <article class="zawa-pro-card status-orb-card kingdom-pulse-card" style="--pro-color:var(--violet)">
           <span class="zawa-pro-eyebrow">El Pulso del Reino</span>
           <h3>La Llama del Directo</h3>
           <p class="senda-muted">Cuando la llama esté encendida, el Reino estará despierto. Si la llama descansa, el portal permanecerá sellado hasta el próximo llamado.</p>
 
           <div class="kingdom-live-state" id="kingdomLiveState" data-state="offline">
-            <span class="kingdom-live-rune" aria-hidden="true">✦</span>
+            <span class="kingdom-live-rune kingdom-eye-rune" aria-hidden="true">
+              <svg class="kingdom-eye-icon" viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg">
+                <g class="eye-open">
+                  <path class="eye-outline" d="M55,135 C80,108 100,98 120,98 C140,98 160,108 185,135 C160,162 140,172 120,172 C100,172 80,162 55,135 Z"/>
+                  <circle class="eye-pupil" cx="120" cy="135" r="17"/>
+                  <circle class="eye-glint" cx="126" cy="129" r="5"/>
+                </g>
+                <g class="eye-closed">
+                  <path class="eye-lid" d="M50,138 C80,116 100,108 120,108 C140,108 160,116 190,138"/>
+                </g>
+              </svg>
+            </span>
             <div class="kingdom-live-copy">
-              <strong id="kingdomLiveTitle">El Eterno está descansando</strong>
-              <span id="kingdomLiveText">La llama está apagada por ahora.</span>
+              <strong id="kingdomLiveTitle">El Ojo de Zawa se ha cerrado</strong>
+              <span id="kingdomLiveText">El Reino guarda silencio tras el párpado violeta, esperando el próximo parpadeo para volver a contemplarlo todo.</span>
             </div>
             <b id="kingdomLivePill" class="status-pill off">OFFLINE</b>
           </div>
@@ -10423,11 +10476,11 @@ Exigencias
       pill.classList.toggle('off', !online);
 
       if(online){
-        title.textContent = 'El Eterno está presente';
-        text.textContent = 'La llama está encendida. Zawa está en directo y el llamado ya fue abierto.';
+        title.textContent = 'El Ojo de Zawa está abierto';
+        text.textContent = 'El Ojo de Zawa está abierto y todo el Reino cae bajo su mirada: cada ofrenda, cada ritual y cada grito del chat quedan grabados en su pupila dorada.';
       }else{
-        title.textContent = 'El Eterno está descansando';
-        text.textContent = 'El Reino sigue en pie. La llama del directo volverá a encenderse en el próximo llamado.';
+        title.textContent = 'El Ojo de Zawa se ha cerrado';
+        text.textContent = 'El Ojo de Zawa se ha cerrado. El Reino guarda silencio tras el párpado violeta, esperando el próximo parpadeo para volver a contemplarlo todo.';
       }
     }
 
