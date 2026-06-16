@@ -1,41 +1,14 @@
 {
   "source": "twitch",
   "weekLabel": "Semana del Reino",
-  "mesias": [
-    {
-      "name": "Numichi",
-      "status": "VIP activo"
-    },
-    {
-      "name": "lobo0620",
-      "status": "VIP activo"
-    }
-  ],
+  "mesias": [],
   "seresDivinos": {
-    "dioses": [
-      {
-        "name": "Lur3n_"
-      },
-      {
-        "name": "Mr_noob2212"
-      }
-    ],
+    "dioses": [],
     "titanes": [],
     "primordiales": []
   },
   "heraldosGloria": [],
   "forjadoresTesoro": [],
-  "guardianes": [
-    {
-      "name": "RestreamBot",
-      "role": "Moderador",
-      "photo": ""
-    },
-    {
-      "name": "EdGhost21",
-      "role": "Moderador",
-      "photo": ""
-    }
-  ],
+  "guardianes": [],
   "rachasGloria": []
 }
