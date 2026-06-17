@@ -1,0 +1,663 @@
+﻿<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <meta name="theme-color" content="#070310" />
+  <title>Grimorio de los Poderes Divinos — Reino de Zawa</title>
+  <link rel="icon" type="image/png" sizes="96x96" href="assets/img17.png" />
+  <meta name="description" content="Grimorio pixel-art inmersivo de comandos para los pequeños dioses del Reino de Zawa." />
+
+<link rel="stylesheet" href="style.css" />
+  </head>
+<body>
+  <div class="noise"></div>
+  <div class="runes"></div>
+  <div class="torch-glow"></div>
+
+  <header class="topbar">
+    <a class="brand" href="#senda" data-view="senda" aria-label="Volver al inicio">
+      <div class="sigil" aria-hidden="true"><img src="assets/img0.png" alt="" fetchpriority="high" /></div>
+      <div class="brand-title">Grimorio de los Poderes Divinos<span>archivo sagrado del reino</span></div>
+    </a>
+    <button class="nav-toggle" id="navToggle" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="mainNav">☰</button>
+    <div class="nav-overlay" id="navOverlay"></div>
+    <nav class="nav" id="mainNav" aria-label="Navegación principal">
+      <button class="nav-close-btn" id="navClose" type="button" aria-label="Cerrar menú">MENÚ</button>
+      <a href="#senda" data-view="senda">La Senda</a>
+      <a href="#grimorio" data-view="pergaminos">Pergaminos</a>
+      <a href="#glosario" data-view="glosario">Glosario del Reino</a>
+      <a href="#gloria" data-view="altares" id="navAltares">Altares de la Gloria</a>
+      <a href="#rangos" data-view="rangos">Rangos</a>
+      <a href="#leyes" data-view="leyes">Leyes</a>
+      <button id="motionToggle" type="button" aria-pressed="false" title="Pausa las partículas y runas sin reiniciarlas">Runas selladas</button>
+    </nav>
+  </header>
+
+    <section class="zawa-global-portals" aria-label="Portales de Zawa">
+      <div class="zawa-global-portals-inner">
+        <span class="zawa-portals-title">✦ Portales de Zawa</span>
+        <div class="zawa-portal-icons">
+          <a class="twitch" href="https://www.twitch.tv/ZawarudoDB" target="_blank" rel="noopener noreferrer" aria-label="Twitch" title="Twitch">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 3h17v12l-5 5h-4l-3 3H7v-3H3V7l1-4Zm2 2-1 3v10h4v3l3-3h4l3-3V5H6Zm5 4h2v5h-2V9Zm5 0h2v5h-2V9Z"/></svg>
+          </a>
+          <a class="kick" href="https://kick.com/ZawaPDB" target="_blank" rel="noopener noreferrer" aria-label="Kick" title="Kick">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h6v6l5-6h6l-7 8 7 8h-6l-5-6v6H5V4Z"/></svg>
+          </a>
+          <a class="youtube" href="https://www.youtube.com/@ZawaPDB" target="_blank" rel="noopener noreferrer" aria-label="YouTube" title="YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.5 7.2a3 3 0 0 0-2.1-2.1C17.5 4.6 12 4.6 12 4.6s-5.5 0-7.4.5a3 3 0 0 0-2.1 2.1A31 31 0 0 0 2 12a31 31 0 0 0 .5 4.8 3 3 0 0 0 2.1 2.1c1.9.5 7.4.5 7.4.5s5.5 0 7.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 22 12a31 31 0 0 0-.5-4.8ZM10 15.5v-7l6 3.5-6 3.5Z"/></svg>
+          </a>
+          <a class="instagram" href="https://www.instagram.com/ZawarudoDB" target="_blank" rel="noopener noreferrer" aria-label="Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7.5 2h9A5.5 5.5 0 0 1 22 7.5v9a5.5 5.5 0 0 1-5.5 5.5h-9A5.5 5.5 0 0 1 2 16.5v-9A5.5 5.5 0 0 1 7.5 2Zm0 2A3.5 3.5 0 0 0 4 7.5v9A3.5 3.5 0 0 0 7.5 20h9a3.5 3.5 0 0 0 3.5-3.5v-9A3.5 3.5 0 0 0 16.5 4h-9ZM12 7a5 5 0 1 1 0 10 5 5 0 0 1 0-10Zm0 2a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm5.25-2.2a1.2 1.2 0 1 1 0 2.4 1.2 1.2 0 0 1 0-2.4Z"/></svg>
+          </a>
+          <a class="tiktok" href="https://www.tiktok.com/@ZawarudoDB" target="_blank" rel="noopener noreferrer" aria-label="TikTok" title="TikTok">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3h3a5.5 5.5 0 0 0 4 4.8V11a8.3 8.3 0 0 1-4-1.05V16a6 6 0 1 1-6-6c.35 0 .68.03 1 .09v3.2A2.8 2.8 0 1 0 14.8 16V3H14Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  <main id="inicio" class="wrap">
+    <section class="hero" id="senda" aria-labelledby="hero-title">
+      <div class="hero-copy">
+        <div class="kicker">El códice sagrado del Reino de Zawa</div>
+        <h1 id="hero-title">Grimorio de los Poderes Divinos</h1>
+        <p class="hero-lead">
+          Estas páginas no fueron escritas: fueron <strong>reveladas</strong>. Aquí descansa todo el saber que un pequeño Dios necesita para caminar el reino — forjar su fortuna en Fotopatas, invocar los rituales ante El Eterno, alzarse cuando despierte el Titán del Vacío y sobrevivir a lo que acecha entre las Sombras.
+        </p>
+        <div class="hero-actions">
+          <a class="pixel-btn primary" href="#grimorio" data-view="pergaminos">Abrir el grimorio</a>
+          <a class="pixel-btn" href="#ruta" data-view="senda">Soy nuevo en el reino</a>
+        </div>
+
+        <section class="hero-altars-slider" aria-label="Menciones honoríficas del Reino">
+          <div class="altar-slide-label" id="heroAltarSlideLabel">Altares de la Gloria</div>
+          <div class="altar-slide-track" id="heroAltarSlideTrack">
+            <div class="altar-slide-person empty">
+              <span class="altar-slide-avatar">Z</span>
+              <span class="altar-slide-name">Esperando menciones</span>
+            </div>
+          </div>
+        </section>
+</div>
+
+      <aside class="artifact-panel codex-artifact zawa-logo-sanctum" aria-label="Sello del Reino de Zawa">
+        <div class="zawa-sanctum-wrap">
+          <div class="zawa-emblem-stage" id="codexBook" role="button" tabindex="0" aria-label="Sello de Zawa: acércate para liberar runas y nombres desde detrás del logo">
+            <span class="zawa-rune zr-1">ᚱ</span>
+            <span class="zawa-rune zr-2">✦</span>
+            <span class="zawa-rune zr-3">ᛉ</span>
+            <span class="zawa-rune zr-4">◇</span>
+            <span class="zawa-rune zr-5">ᚨ</span>
+            <span class="zawa-word zw-1">GLORIA</span>
+            <span class="zawa-word zw-2">ALMAS</span>
+            <span class="zawa-word zw-3">SOMBRAS</span>
+            <span class="zawa-word zw-4">RITUALES</span>
+            <span class="zawa-word zw-5">FPZ</span>
+            <div class="zawa-logo-core">
+              <img src="assets/img0.png" alt="Logo de Zawa" loading="lazy">
+            </div>
+
+            <div class="zawa-mods-panel" aria-label="Mods destacados del sello">
+              <strong>EdGhost</strong>
+            </div>
+</div>
+          <div class="codex-hint">acércate al sello y las runas responderán</div>
+        </div>
+      </aside>
+    </section>
+
+    <section id="glosario" class="section glossary-section" aria-labelledby="glosario-title">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Segundo pergamino del viajero</div>
+          <h2 id="glosario-title">Glosario del Reino</h2>
+        </div>
+        <p>Antes de tocar los altares, aprende las palabras que se repiten en el reino. Cada nombre tiene peso, cada ofrenda tiene marca y cada rango abre una puerta distinta.</p>
+      </div>
+
+      <div class="glossary-grid" aria-label="Palabras importantes del Reino de Zawa">
+        <article class="glossary-card glory-fx">
+          <span class="glossary-rune"><img src="assets/img1.jpg" alt="Gloria" loading="lazy"></span>
+          <h3>Gloria</h3>
+          <p>Cada sub regalada se convierte en <strong>1 Gloria</strong>. Los Heraldos la usan para elevar a otros elegidos ante el trono.</p>
+          <span class="glory-spotlight" aria-hidden="true"></span>
+          <span class="glory-confetti" aria-hidden="true"><span style="left:24.4%; width:6px; height:7px; background:#fff4df; border-radius:1px; --gd:0.46s; --gx:15px; --gr:199deg;"></span><span style="left:11.1%; width:6px; height:4px; background:#ffd166; border-radius:1px; --gd:0.0s; --gx:-11px; --gr:147deg;"></span><span style="left:83.6%; width:6px; height:5px; background:#ff5d9e; border-radius:1px; --gd:0.7s; --gx:-9px; --gr:314deg;"></span><span style="left:65.0%; width:6px; height:4px; background:#ffb02e; border-radius:50%; --gd:0.59s; --gx:-16px; --gr:258deg;"></span><span style="left:31.5%; width:6px; height:7px; background:#ffb02e; border-radius:50%; --gd:0.62s; --gx:25px; --gr:222deg;"></span><span style="left:73.9%; width:6px; height:7px; background:#ff5d9e; border-radius:50%; --gd:0.54s; --gx:-8px; --gr:305deg;"></span><span style="left:39.0%; width:4px; height:7px; background:#ffb02e; border-radius:1px; --gd:0.85s; --gx:-7px; --gr:177deg;"></span><span style="left:37.6%; width:5px; height:7px; background:#ffd166; border-radius:1px; --gd:0.1s; --gx:-19px; --gr:128deg;"></span><span style="left:26.6%; width:5px; height:7px; background:#ffb02e; border-radius:50%; --gd:0.71s; --gx:-19px; --gr:303deg;"></span><span style="left:29.1%; width:4px; height:4px; background:#ffd166; border-radius:50%; --gd:0.9s; --gx:8px; --gr:177deg;"></span><span style="left:58.4%; width:6px; height:5px; background:#fff4df; border-radius:1px; --gd:0.12s; --gx:-4px; --gr:120deg;"></span><span style="left:32.7%; width:4px; height:5px; background:#ffb02e; border-radius:1px; --gd:0.75s; --gx:22px; --gr:306deg;"></span><span style="left:42.3%; width:6px; height:4px; background:#67ffe7; border-radius:50%; --gd:0.57s; --gx:-26px; --gr:308deg;"></span><span style="left:87.4%; width:6px; height:7px; background:#ffb02e; border-radius:50%; --gd:0.34s; --gx:19px; --gr:261deg;"></span><span style="left:77.5%; width:6px; height:7px; background:#ffd166; border-radius:50%; --gd:0.31s; --gx:2px; --gr:178deg;"></span><span style="left:20.1%; width:5px; height:4px; background:#ff5d9e; border-radius:50%; --gd:0.19s; --gx:-9px; --gr:186deg;"></span><span style="left:7.5%; width:4px; height:7px; background:#ffd166; border-radius:1px; --gd:0.45s; --gx:-12px; --gr:229deg;"></span><span style="left:12.7%; width:4px; height:5px; background:#ff5d9e; border-radius:1px; --gd:0.85s; --gx:-17px; --gr:267deg;"></span><span style="left:32.8%; width:6px; height:5px; background:#67ffe7; border-radius:50%; --gd:0.62s; --gx:-21px; --gr:305deg;"></span><span style="left:26.2%; width:5px; height:4px; background:#ffd166; border-radius:1px; --gd:0.84s; --gx:11px; --gr:148deg;"></span><span style="left:51.6%; width:5px; height:4px; background:#ff5d9e; border-radius:50%; --gd:0.31s; --gx:-16px; --gr:241deg;"></span><span style="left:40.5%; width:4px; height:7px; background:#fff4df; border-radius:50%; --gd:0.82s; --gx:-8px; --gr:247deg;"></span><span style="left:60.2%; width:4px; height:7px; background:#ffb02e; border-radius:1px; --gd:0.09s; --gx:20px; --gr:287deg;"></span><span style="left:55.3%; width:6px; height:5px; background:#fff4df; border-radius:1px; --gd:0.59s; --gx:0px; --gr:227deg;"></span><span style="left:83.8%; width:5px; height:5px; background:#fff4df; border-radius:1px; --gd:0.31s; --gx:-3px; --gr:237deg;"></span><span style="left:57.7%; width:5px; height:4px; background:#ffd166; border-radius:1px; --gd:0.59s; --gx:20px; --gr:123deg;"></span></span>
+          <span class="glory-hands" aria-hidden="true"><span class="gh-l">🙌</span><span class="gh-r">🙌</span></span>
+        </article>
+                <article class="glossary-card">
+          <span class="glossary-rune"><img src="assets/img2.webp" alt="Alma" loading="lazy"></span>
+          <h3>Alma</h3>
+          <p>Cada bit entregado despierta <strong>1 Alma</strong>. Las Almas alimentan el tesoro y fortalecen la llama del reino.</p>
+        </article>
+                <article class="glossary-card">
+          <span class="glossary-rune"><img src="assets/img3.webp" alt="FPZ" loading="lazy"></span>
+          <h3>FPZ</h3>
+          <p>Fotopatas de Zawa: la moneda del chat. Sirve para cofres, duelos, rituales, apuestas y sombras del Mercado.</p>
+        </article>
+                <article class="glossary-card">
+          <span class="glossary-rune"><img src="assets/img4.webp" alt="Mesías" loading="lazy"></span>
+          <h3>Mesías</h3>
+          <p>Portadores del sello VIP. Sus nombres quedan visibles porque el trono reconoce su presencia en el reino.</p>
+        </article>
+                <article class="glossary-card">
+          <span class="glossary-rune"><img src="assets/img5.webp" alt="Seres Divinos" loading="lazy"></span>
+          <h3>Seres Divinos</h3>
+          <p>Suscriptores del reino, divididos por naturaleza: Dioses Olímpicos, Titanes y Primordiales.</p>
+        </article>
+                <article class="glossary-card">
+          <span class="glossary-rune"><img src="assets/img6.webp" alt="Heraldo" loading="lazy"></span>
+          <h3>Heraldo</h3>
+          <p>Quien entrega <strong>Gloria</strong> a los demás habitantes del Reino y esparce las crónicas del Reino por todas partes. Su marca se mide en <strong>Gloria</strong>.</p>
+        </article>
+                <article class="glossary-card">
+          <span class="glossary-rune"><img src="assets/img7.webp" alt="Forjador" loading="lazy"></span>
+          <h3>Forjador</h3>
+          <p>Quien ofrece <strong>Almas</strong> al tesoro del Reino. Su estela gloriosa se mide en <strong>Almas</strong> y queda registrada ante el altar de la gloria.</p>
+        </article>
+                <article class="glossary-card">
+          <span class="glossary-rune"><img src="assets/img8.webp" alt="Guardián" loading="lazy"></span>
+          <h3>Guardián</h3>
+          <p>Custodio del orden. Protege las puertas, calma el caos y sostiene las leyes del reino.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="gloria" class="section altares-section" aria-labelledby="gloria-title">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Tercer pergamino del trono</div>
+<h2 id="gloria-title">Altares de la Gloria</h2>
+        </div>
+        <p>En estos altares no se muestran números vacíos: se tallan presencias. Aquí descansan los nombres de quienes sostienen la llama, elevan a otros elegidos, alimentan el tesoro y protegen las puertas del Reino de Zawa.</p>
+      </div>
+
+      <div class="altar-sync-bar" id="altarSyncBar">
+        <span id="altarSyncText">El oráculo del reino aguarda la señal</span>
+        <small id="altarWeekLabel">Semana de la Corona</small>
+      </div>
+
+      <div class="altares-grid">
+        <article class="altar-card altar-mesias">
+          <div class="altar-head">
+            <span class="altar-icon altar-icon--png"><img src="assets/img4.webp" alt="Ícono de Mesías del Reino" loading="lazy"></span>
+            <div>
+              <h3>Mesías del Reino</h3>
+              <em>Portadores del sello VIP, reconocidos por la mirada del trono.</em>
+            </div>
+          </div>
+          <ol class="honor-list" id="altarMesias" aria-label="Mesías del Reino"></ol>
+        </article>
+
+        <article class="altar-card altar-divinos">
+          <div class="altar-head">
+            <span class="altar-icon altar-icon--png"><img src="assets/img5.webp" alt="Ícono de Seres Divinos" loading="lazy"></span>
+            <div>
+              <h3>Seres Divinos</h3>
+              <em>Suscriptores del reino, separados por su naturaleza divina.</em>
+            </div>
+          </div>
+
+          <div class="divine-pager" data-divine-pager>
+            <div class="divine-tabs" role="tablist" aria-label="Páginas de Seres Divinos">
+              <button class="divine-tab is-active" type="button" role="tab" aria-selected="true" aria-controls="divinePageDioses" data-divine-page="0">
+                <span>Dioses</span><small>Tier 1</small>
+              </button>
+              <button class="divine-tab" type="button" role="tab" aria-selected="false" aria-controls="divinePageTitanes" data-divine-page="1">
+                <span>Titanes</span><small>Tier 2</small>
+              </button>
+              <button class="divine-tab" type="button" role="tab" aria-selected="false" aria-controls="divinePagePrimordiales" data-divine-page="2">
+                <span>Primordiales</span><small>Tier 3</small>
+              </button>
+            </div>
+
+            <div class="divine-pages">
+              <section class="divine-page is-active" id="divinePageDioses" role="tabpanel" aria-label="Dioses Olímpicos" data-divine-page-panel="0">
+                <div class="divine-page-head">
+                  <strong>Dioses Olímpicos</strong>
+                  <small>Tier 1</small>
+                </div>
+                <ol class="mini-honor-list" id="altarDioses"></ol>
+              </section>
+              <section class="divine-page" id="divinePageTitanes" role="tabpanel" aria-label="Titanes" data-divine-page-panel="1" hidden>
+                <div class="divine-page-head">
+                  <strong>Titanes</strong>
+                  <small>Tier 2</small>
+                </div>
+                <ol class="mini-honor-list" id="altarTitanes"></ol>
+              </section>
+              <section class="divine-page" id="divinePagePrimordiales" role="tabpanel" aria-label="Primordiales" data-divine-page-panel="2" hidden>
+                <div class="divine-page-head">
+                  <strong>Primordiales</strong>
+                  <small>Tier 3</small>
+                </div>
+                <ol class="mini-honor-list" id="altarPrimordiales"></ol>
+              </section>
+            </div>
+          </div>
+        </article>
+
+        <article class="altar-card altar-gloria">
+          <div class="altar-head">
+            <span class="altar-icon altar-icon--png"><img src="assets/img6.webp" alt="Ícono de Heraldo de la Gloria" loading="lazy"></span>
+            <div>
+              <h3>Heraldos de Gloria</h3>
+              <em>Quienes alzan a otros elegidos mediante ofrendas de Gloria.</em>
+            </div>
+          </div>
+          <ol class="honor-list" id="altarGloria" aria-label="Heraldos de Gloria"></ol>
+        </article>
+
+        <article class="altar-card altar-tesoro">
+          <div class="altar-head">
+            <span class="altar-icon altar-icon--png"><img src="assets/img7.webp" alt="Ícono de Forjadores del Tesoro" loading="lazy"></span>
+            <div>
+              <h3>Forjadores del Tesoro</h3>
+              <em>Quienes entregan Almas para alimentar el tesoro del trono.</em>
+            </div>
+          </div>
+          <ol class="honor-list" id="altarAlmas" aria-label="Forjadores del Tesoro"></ol>
+        </article>
+
+        <article class="altar-card altar-guardianes">
+          <div class="altar-head">
+            <span class="altar-icon altar-icon--png"><img src="assets/img8.webp" alt="Ícono de Guardianes" loading="lazy"></span>
+            <div>
+              <h3>Guardianes</h3>
+              <em>Custodios que guardan las puertas y sostienen las leyes del reino.</em>
+            </div>
+          </div>
+          <div class="guardian-list" id="altarGuardianes" aria-label="Guardianes del Reino"></div>
+        </article>
+
+        <article class="altar-card altar-racha racha-card">
+          <div class="altar-head">
+            <span class="altar-icon altar-icon--png"><img src="assets/img9.png" alt="Ícono de Racha de Llamas" loading="lazy"></span>
+            <div>
+              <h3>Racha de Llamas</h3>
+              <em>Honra a quienes mantienen encendida su presencia y regresan al Reino stream tras stream.</em>
+            </div>
+          </div>
+
+          <div class="racha-lead" id="rachaLead" aria-label="Mayor vigilia actual">
+            <span class="racha-crown">♔</span>
+            <span class="racha-main">
+              <span class="racha-label">Mayor vigilia</span>
+              <span class="racha-name">Esperando al primer guardián</span>
+              <span class="racha-title">Llama por encender</span>
+            </span>
+            <span class="racha-count"><strong>0</strong>streams</span>
+          </div>
+
+          <ol class="racha-list" id="altarRachas" aria-label="Racha de Llamas"></ol>
+
+          <div class="racha-milestones" aria-label="Rangos de racha">
+            <span><b>3</b>Vigía</span>
+            <span><b>5</b>Guardián</span>
+            <span><b>10</b>Campeón</span>
+            <span><b>20</b>Titán</span>
+            <span><b>30</b>Primordial</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section id="ruta" class="section" aria-labelledby="ruta-title">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Primeros pasos del viajero</div>
+          <h2 id="ruta-title">La Senda del Viajero</h2>
+        </div>
+        <p>¿Primera vez en el Reino? Aquí empieza tu camino. Cada poder se invoca escribiendo su palabra <b>en el chat del directo</b> (Twitch o Kick). Si un poder te confunde, pregúntale al grimorio con <code>!info</code>; si quieres ver una rama completa, ábrela con <code>!PZ</code>. Estos son tus primeros pasos.</p>
+      </div>
+      <div class="path-grid">
+        <article class="path-card"><b>01</b><h3>Abre el mapa</h3><p>Tu punto de partida: muestra todas las rutas del reino y por dónde puedes ir.</p><code>!zmap</code><span class="path-where">⌨ Escríbelo en el chat del directo</span></article>
+        <article class="path-card"><b>02</b><h3>Despliega un pergamino</h3><p>Abre una rama completa de poderes. Ej: <code>!PZ sapere</code>, <code>!PZ economia</code>, <code>!PZ sombras</code>.</p><code>!PZ [rama]</code><span class="path-where">⌨ En el chat del directo</span></article>
+        <article class="path-card"><b>03</b><h3>Pregunta por un poder</h3><p>¿No sabes qué hace algo? El grimorio te lo explica. Ej: <code>!info cofre</code>, <code>!info robar</code>.</p><code>!info [poder]</code><span class="path-where">⌨ En el chat del directo</span></article>
+        <article class="path-card"><b>04</b><h3>Consulta tu poder</h3><p>Revisa tus FPZ antes de apostar, abrir cofres, invocar a Rah o entrar al mercado.</p><code>!wacal</code><span class="path-where">⌨ En el chat del directo</span></article>
+        <article class="path-card"><b>05</b><h3>Participa y gana</h3><p>Consigue FPZ con cofres, duelos, ruleta, misiones y los eventos activos del reino.</p><code>!cofre</code><span class="path-where">⌨ En el chat del directo</span></article>
+        <article class="path-card"><b>06</b><h3>Entra al ritual</h3><p>Cuando domines las reglas, reta al destino y deja que el chat decida tu suerte.</p><code>!SalRah</code><span class="path-where">⌨ En el chat del directo</span></article>
+      </div>
+    </section>
+<section class="section zawa-senda-core" id="senda-nucleo">
+      <div class="section-head">
+        <div>
+          <span class="kicker">Pulso inicial del Reino</span>
+          <h2>El Pulso del Reino</h2>
+        </div>
+        <p>La primera señal del Reino: si la llama está encendida, Zawa está en directo; si descansa, el portal aguarda el próximo llamado.</p>
+      </div>
+
+      <div class="senda-main-grid">
+
+        <article class="zawa-pro-card status-orb-card kingdom-pulse-card" style="--pro-color:var(--violet)">
+          <span class="zawa-pro-eyebrow">El Pulso del Reino</span>
+          <h3>La Llama del Directo</h3>
+          <p class="senda-muted">Cuando la llama esté encendida, el Reino estará despierto. Si la llama descansa, el portal permanecerá sellado hasta el próximo llamado.</p>
+
+          <div class="kingdom-live-state" id="kingdomLiveState" data-state="offline">
+            <span class="kingdom-live-rune kingdom-eye-rune" aria-hidden="true">
+              <svg class="kingdom-eye-icon" viewBox="0 0 240 220" xmlns="http://www.w3.org/2000/svg">
+                <g class="eye-open">
+                  <path class="eye-outline" d="M55,135 C80,108 100,98 120,98 C140,98 160,108 185,135 C160,162 140,172 120,172 C100,172 80,162 55,135 Z"/>
+                  <circle class="eye-pupil" cx="120" cy="135" r="17"/>
+                  <circle class="eye-glint" cx="126" cy="129" r="5"/>
+                </g>
+                <g class="eye-closed">
+                  <path class="eye-lid" d="M50,138 C80,116 100,108 120,108 C140,108 160,116 190,138"/>
+                </g>
+              </svg>
+            </span>
+            <div class="kingdom-live-copy">
+              <strong id="kingdomLiveTitle">El Ojo de Zawa se ha cerrado</strong>
+              <span id="kingdomLiveText">El Reino guarda silencio tras el párpado violeta, esperando el próximo parpadeo para volver a contemplarlo todo.</span>
+            </div>
+            <b id="kingdomLivePill" class="status-pill off">OFFLINE</b>
+          </div>
+        </article>
+
+<article class="zawa-pro-card oracle-card" style="--pro-color:var(--gold)">
+          <span class="zawa-pro-eyebrow">El Heraldo del Reino</span>
+          <h3 id="oracleTitle">No hay llamado activo</h3>
+          <p id="oracleDescription">Cuando un evento sea invocado, el Heraldo abrirá el llamado en esta sala.</p>
+          <div class="oracle-command-row" id="oracleCommands" hidden></div>
+        </article>
+      </div>
+    </section>
+
+<section class="section zawa-staff-section" id="staff-reino">
+      <div class="section-head">
+        <div>
+          <span class="kicker">Equipo Staff</span>
+          <h2>Consejo del Reino</h2>
+        </div>
+        <p>Los guardianes que sostienen el orden, la voz y las puertas del Reino de Zawa.</p>
+      </div>
+
+      <div class="staff-clean-grid">
+        <article class="zawa-pro-card eternal-clean-card" id="el-eterno" style="--pro-color:var(--violet)">
+          <span class="zawa-pro-eyebrow">El Eterno</span>
+          <div class="eternal-clean-photo">
+            <img src="assets/img10.jpg" alt="Zawa" loading="lazy">
+          </div>
+          <h3>Zawa</h3>
+          <div class="staff-tags clean-tags">
+            <span>Creador</span>
+            <span>Streamer</span>
+            <span>Gotto</span>
+            <span>El Eterno</span>
+            <span>Guía del Reino</span>
+          </div>
+          <p>Zawa, El Eterno, convierte cada directo en un punto de encuentro donde la risa, la energía y las ideas se cruzan sin pedir permiso. Llegas por curiosidad, te quedas por el caos… y cuando te das cuenta, ya eres parte del Reino.</p>
+        </article>
+
+        <article class="zawa-pro-card staff-clean-card" style="--pro-color:var(--cyan)">
+          <span class="zawa-pro-eyebrow">Guardianes activos</span>
+          <h3>Staff del Reino</h3>
+          <div class="staff-list clean-staff-list">
+            <div class="staff-person eternal">
+              <span class="staff-avatar"><img src="assets/img10.jpg" alt="Zawa" loading="lazy"></span>
+              <span><strong>Zawa</strong><small>El Eterno</small></span>
+            </div>
+            <div class="staff-person edghost">
+              <span class="staff-avatar"><img src="assets/img11.jpg" alt="EdGhost21" loading="lazy"></span>
+              <span><strong>EdGhost21</strong><small>Staff / moderador</small></span>
+            </div>
+          </div>
+        </article>
+      </div>
+    
+
+      <div class="council-cinematic-grid">
+        <article class="council-cinematic-card zawa-council" style="--council-color:var(--violet)">
+          <div class="council-cinematic-bg">
+            <img src="assets/img10.jpg" alt="Zawa" loading="lazy">
+          </div>
+          <div class="council-cinematic-shade"></div>
+          <div class="council-cinematic-content">
+            <span class="council-rank">El Eterno</span>
+            <div class="council-name-row">
+              <span class="council-mini-avatar"><img src="assets/img10.jpg" alt="Zawa" loading="lazy"></span>
+              <h3>Zawa</h3>
+            </div>
+            <p>Zawa, El Eterno.</p>
+            <div class="staff-tags">
+              <span>Gotto</span>
+              <span>El Eterno</span>
+              <span>Líder del Reino</span>
+            </div>
+          </div>
+        </article>
+
+        <article class="council-cinematic-card edghost-council" style="--council-color:var(--cyan)">
+          <div class="council-cinematic-bg">
+            <img src="assets/img11.jpg" alt="EdGhost21" loading="lazy">
+          </div>
+          <div class="council-cinematic-shade"></div>
+          <div class="council-cinematic-content">
+            <span class="council-rank">Guardián del Reino</span>
+            <div class="council-name-row">
+              <span class="council-mini-avatar"><img src="assets/img11.jpg" alt="EdGhost21" loading="lazy"></span>
+              <h3>EdGhost21</h3>
+            </div>
+            <p>Observa en silencio, aparece cuando hace falta y mantiene la puerta del Reino protegida.</p>
+            <div class="staff-tags">
+              <span>Staff</span>
+              <span>Moderador</span>
+              <span>Protección</span>
+            </div>
+          </div>
+        </article>
+      </div>
+
+</section>
+
+    <section id="grimorio" class="section" aria-labelledby="grimorio-title">
+      <div class="section-head">
+        <div>
+          <div class="kicker">Los pergaminos del poder</div>
+          <h2 id="grimorio-title">Comandos del reino</h2>
+        </div>
+        <p>Susurra un nombre al buscador o elige un pergamino. Cada ficha guarda el costo, el acceso y la leyenda de cada poder del reino.</p>
+      </div>
+
+      <div class="codex-shell">
+        <div class="control-panel">
+          <div class="control-row">
+            <div class="search">
+              <label for="searchInput">Buscar hechizo, poder o comando</label>
+              <input id="searchInput" type="search" placeholder="Ejemplo: robar, boss, mercado, !SalRah, FPZ..." autocomplete="off" />
+            </div>
+            <div class="switches">
+              <button class="tiny-btn" id="clearBtn" type="button">Disipar</button>
+            </div>
+          </div>
+          <div class="realm-tabs" id="realmTabs" aria-label="Filtros por reino">
+            <button class="realm-tab is-active" type="button" data-realm="todos" aria-current="true">✦ Todos <small>39</small></button>
+            <button class="realm-tab" type="button" data-realm="sapere"><span class="realm-tab-icon realm-tab-icon-sapere" aria-hidden="true"><img src="assets/img12.webp" alt="" loading="lazy"></span> Sapere <small>8</small></button>
+            <button class="realm-tab" type="button" data-realm="economia"><span class="realm-tab-icon realm-tab-icon-economia" aria-hidden="true"><img src="assets/img3.webp" alt="" loading="lazy"></span> Economía <small>4</small></button>
+            <button class="realm-tab" type="button" data-realm="rituales"><span class="realm-tab-icon realm-tab-icon-rituales" aria-hidden="true"><img src="assets/img13.webp" alt="" loading="lazy"></span> Rituales <small>4</small></button>
+            <button class="realm-tab" type="button" data-realm="titanes"><span class="realm-tab-icon realm-tab-icon-titanes" aria-hidden="true"><img src="assets/img14.webp" alt="" loading="lazy"></span> Cacería del Titán <small>7</small></button>
+            <button class="realm-tab" type="button" data-realm="sombras"><span class="realm-tab-icon realm-tab-icon-sombras" aria-hidden="true"><img src="assets/img15.webp" alt="" loading="lazy"></span> Sombras <small>12</small></button>
+            <button class="realm-tab" type="button" data-realm="cemies"><span class="realm-tab-icon realm-tab-icon-cemies"><img src="assets/img16.webp" alt="" loading="lazy"></span> Cemíes <small>4</small></button>
+          </div>
+        </div>
+        <div class="choose" id="chooseState">✦ Elige un pergamino para revelar sus poderes ✦</div>
+        <div class="empty" id="emptyState">Ningún poder responde a ese nombre. Invoca otro término del reino.</div>
+        
+      <div class="command-upgrade-note">
+        <b>Formato profesional de poderes:</b> cada carta del grimorio está preparada para mostrar comando, costo, acceso, descripción, ejemplo y botón de copiar. Al conectar Twitch, los eventos activos podrán resaltar automáticamente los comandos disponibles durante el stream.
+      </div>
+
+<div class="command-grid" id="commandGrid"></div>
+      </div>
+    </section>
+<section class="section" id="rangos">
+      <div class="section-head">
+        <div>
+          <span class="kicker">Jerarquía divina</span>
+          <h2>Rangos del Reino</h2>
+        </div>
+        <p>La estructura oficial de la comunidad para seguidores, subs, VIPs, mods y miembros destacados.</p>
+      </div>
+
+      <div class="zawa-rank-grid">
+        <article class="zawa-pro-card rank-card" style="--pro-color:var(--cyan)">
+          <span class="rank-icon">✨</span>
+          <strong>Pequeño Dios</strong>
+          <small>Seguidor</small>
+          <span>Primer rango del reino. Entra al chat, participa y empieza a acumular gloria.</span>
+        </article>
+        <article class="zawa-pro-card rank-card" style="--pro-color:var(--gold)">
+          <span class="rank-icon">👑</span>
+          <strong>Dios Olímpico</strong>
+          <small>Sub Tier 1</small>
+          <span>Miembro divino con presencia destacada y reconocimiento dentro de los altares.</span>
+        </article>
+        <article class="zawa-pro-card rank-card" style="--pro-color:var(--red)">
+          <span class="rank-icon">🔥</span>
+          <strong>Titán</strong>
+          <small>Sub Tier 2</small>
+          <span>Rango superior para quienes alimentan la llama del reino con mayor poder.</span>
+        </article>
+        <article class="zawa-pro-card rank-card" style="--pro-color:var(--rose)">
+          <span class="rank-icon">🌌</span>
+          <strong>Primordial</strong>
+          <small>Sub Tier 3</small>
+          <span>Presencia máxima entre los seres divinos. Su nombre pesa en el grimorio.</span>
+        </article>
+        <article class="zawa-pro-card rank-card" style="--pro-color:var(--green)">
+          <span class="rank-icon">🛡️</span>
+          <strong>Guardián</strong>
+          <small>Moderador</small>
+          <span>Custodia las puertas, mantiene el orden y protege la experiencia del chat.</span>
+        </article>
+        <article class="zawa-pro-card rank-card" style="--pro-color:var(--violet)">
+          <span class="rank-icon">💎</span>
+          <strong>Mesías</strong>
+          <small>VIP</small>
+          <span>Habitante destacado con marca especial dentro de la comunidad de Zawa.</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="section" id="leyes">
+      <div class="section-head">
+        <div>
+          <span class="kicker">Normas oficiales</span>
+          <h2>Leyes del Reino</h2>
+        </div>
+        <p>Estas reglas se muestran tal cual para que no exista confusión ni espacio para interpretaciones convenientes.</p>
+      </div>
+
+      <div class="rules-real-grid">
+        <article class="zawa-pro-card rules-card" style="--pro-color:var(--gold)">
+          <span class="zawa-pro-eyebrow">Aplican para Discord, WhatsApp y comunidad general</span>
+          <h3>Leyes de la Comunidad</h3>
+          <pre>Reglas de discord 
+📐📏Reglas del servidor📏📐:
+🏮 Leer las normas es obligatorio. No conocerlas no justifica su incumplimiento.
+🏮 Reportar a Moderadores, administradores o a cualquier staff que se encargue de moderar el comportamiento del servidor cualquier conflicto entre usuarios.
+🏮 Si necesitas que se te aclare una duda comunícate con:
+
+💮 El equipo de moderación está capacitado y autorizado para tomar cualquier decisión, esté o no explícitamente incluida en la lista. El uso del sentido común y civismo básico es todo lo que necesitas para evitar problemas.
+
+💮 Cualquier medida disciplinaria que se considere injusta o muy severa tiene derecho a revisión y revocación de ser demostrado que fue más severa de lo debido. 
+
+🥇 Regla de oro: Azabus es tu pastor y nada te faltará.
+Imagen
+♈Reglas que hacen que un ban te respire en la nuca♈️
+
+❌: Si eres menor de 14 años necesitas ser supervisado por tus adultos responsables (padres, tutores, etc.), Si eres mayor de 15 años pero menor de 18, al menos ten los permisos de tus padres para andar en internet.
+❌: La usurpación/suplantación de identidad/es no es tolerada.
+❌:No se permitirá ningún tipo de acoso u hostigamiento en el servidor, sin importar el hecho de ser &quot;broma&quot;, si la persona afectada lo reporta y se demuestra la veracidad del reporte absténgase a consecuencias.
+❌: No seas tóxico(a) con miembros que no conozcas. Los amigos se conocen y saben sus límites, los desconocidos no.
+❌:  No escribir al chat privado de alguien sin previo consentimiento.
+🌟 Si usted es de las personas que molesta y le devuelven 🤷🏽‍♂️ 
+❌: Postear o hablar de temas políticos-sociales, apologías de ideas o nacionalismo extremo. (Hay temas políticos pasables pero otros no. Los staff tienen la capacitación para discernir y explicar cual tema si y cual no).
+❌:  Cuidado con el uso del lenguaje ofensivo y/o discriminatorio. No toleramos la falta de respeto de ninguna índole y las decisiones de sanciones, dependiendo su gravedad, puede ser tomada desde un mod (algo leve-moderado-moderado grave), hasta un admin (grave-gravísimo).
+❌: Cualquier estafa con dinero o cosas que involucre la vida real que se realice, será prohibida completamente su entrada a esta comunidad. No toleramos raterías. 🐀.
+❌: El Spam de links personales, grupos de redes sociales u otros servidores ya sea por chat, voz o por DM.
+❌: Uso de multicuentas de manera malversada.
+❌: El santuario de Zawa no se hace responsable de negociaciones, intercambios, préstamos o cualquier transacción realizada dentro o fuera del juego y/o la comunidad tanto en DC como sus extensiones.
+🧸Toda negociación se realiza bajo su propia responsabilidad, mucho ojo a quien le presta su confianza.
+🚫: NO COMPARTAS INFORMACIÓN PERSONAL Y/O SENSIBLE.
+Azabus — 28/02/2026 13:02
+❌: Todo tipo de contenido o insinuaciones NSFW..
+❌: No está permitido el uso de palabras malsonantes/blasfemias/clasistas/racistas. No están permitidas las calumnias, falsedades o cualquier uso estratégico para dañar la imagen e integridad de una personas. Si se descubre que ha mentido sobre alguien para dañar su imagen por simple capricho o cualesquiera que sea el objetivo y no tiene una justificación válida, obtendrá graves sanciones.
+❌: difundir información personal tanto de miembros como de personas no perteneciente al servidor.
+❌: No respetar a la administración. No toleramos la falta de respeto hacia ningún miembro del servidor y hacía los administradores o moderadores mucho menos.
+🌟 Si quien inició el problema fue parte del equipo administrativo o quien inició la falta de respeto, tome captura del momento y comuníquese con la administración. Lo que se demuestre conllevará a las sanciones correspondientes a quien merezca la sanción. 
+Imagen
+❌: Mencionar a algún miembro del equipo staff sin razón alguna o solo por molestar.
+❌: Flood, mensajes largos para molestar
+❌: Postear enlaces fraudulentos, clases online, números de teléfono o cualquier tipo de piratería o acción que perjudique a los miembros y/o servidor.
+❌: Hablar para incentivar el uso y/o mostrar cualquier tipo de arma o drogas.
+✅ :Usa los canales correctos: Mantén las conversaciones en el canal que corresponda. 
+Imagen
+❌: Gritar o poner sonidos extraños en canales de voz.
+❌: Hablar y/o mostrar cualquier tipo de arma o drogas.
+❌: Retransmitir cualquier contenido con derechos de autor: Deportes, netflix, HBO, etc.
+✅ :Usa los canales correctos: Mantén las conversaciones en el canal que corresponda.</pre>
+        </article>
+
+        <article class="zawa-pro-card rules-card" style="--pro-color:var(--cyan)">
+          <span class="zawa-pro-eyebrow">Aplican para Twitch y Kick</span>
+          <h3>Leyes del Directo</h3>
+          <pre>Reglas de twitch
+
+Respeto y Convivencia
+•    Sé amable: Trata a todos con respeto. No se tolerará el acoso, los insultos, el discurso de odio, la discriminación de cualquier tipo, insinuaciones a ventas o consumo de cosas prohibidas y/o apología de ideas.
+•    Evita temas polémicos: No inicies ni fomentes debates sobre política o religión extremistas. Son temas skipeables.
+•    Afuera los problemas personales: Si tienes un problema personal con otro usuario, resuélvelo por mensaje privado o contacta a un moderador. El chat del stream no es para peleas personales.
+•    Prohibido la suplantación de identidad.
+Contenido y Spam
+•    No al Spam: No inundes el chat con mensajes repetitivos, emojis excesivos o mayúsculas innecesarias.
+•    Prohibido la Autopromoción: No publiques enlaces a tus directos, videos o servidores de Discord sin permiso previo. 
+Seguridad y Privacidad
+•    Privacidad: No compartas información personal tuya o de otros.
+Exigencias
+•   No sobre exijas. Es de mal gusto sobre imponer o forzar algo. Deja al streamer fluir.
+
+⛔ ¡Ojo aquí! ⛔ Si decides romper las reglas, los mods te mandarán a dormir. No leer las reglas no es excusa para ser exento de los castigos por alegato a ignorancia. Dependiendo de lo que hagas, el castigo puede ser un ban temporal para que lo pienses, o un ban permanente si te pasas de la raya. No queremos ponernos intensos, ¡así que mejor pórtense bien y disfruten del stream!</pre>
+        </article>
+      </div>
+    </section>
+
+<footer class="footer">
+      <div class="footer-inner">
+        <span><strong>Grimorio de los Poderes Divinos</strong> — El archivo sagrado del Reino de Zawa.</span>
+        <span>«Sé a dónde voy. El camino es otra historia.»</span>
+      </div>
+
+      <div class="social-altar" aria-labelledby="social-title">
+        <h2 class="social-altar-title" id="social-title">Portales de Zawa</h2>
+        <div class="social-grid" aria-label="Redes sociales de Zawa">
+          <a class="social-link twitch" href="https://www.twitch.tv/ZawarudoDB" target="_blank" rel="noopener noreferrer" aria-label="Abrir Twitch de Zawa">
+            <svg class="social-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 3h16v10.7L15.7 18H12l-2.8 3H7v-3H4V3Zm2.2 2.2v10.6h3v1.8l1.8-1.8h4l2.8-2.8V5.2H6.2Zm4.1 3.1h2.1v5.2h-2.1V8.3Zm5.2 0h2.1v5.2h-2.1V8.3Z"/></svg>
+          </a>
+          <a class="social-link kick" href="https://kick.com/ZawaPDB" target="_blank" rel="noopener noreferrer" aria-label="Abrir Kick de Zawa">
+            <svg class="social-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 4h6v5.2L14.7 4H21l-6.1 6.8L21 20h-6.5l-4.5-6.3V20H4V4Z"/></svg>
+          </a>
+          <a class="social-link youtube" href="https://www.youtube.com/@ZawaPDB" target="_blank" rel="noopener noreferrer" aria-label="Abrir YouTube de Zawa">
+            <svg class="social-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M22 12s0-3.4-.43-5.05a3.02 3.02 0 0 0-2.13-2.13C17.78 4.38 12 4.38 12 4.38s-5.78 0-7.44.44a3.02 3.02 0 0 0-2.13 2.13C2 8.6 2 12 2 12s0 3.4.43 5.05a3.02 3.02 0 0 0 2.13 2.13c1.66.44 7.44.44 7.44.44s5.78 0 7.44-.44a3.02 3.02 0 0 0 2.13-2.13C22 15.4 22 12 22 12Zm-12 3.25v-6.5L15.7 12 10 15.25Z"/></svg>
+          </a>
+          <a class="social-link instagram" href="https://www.instagram.com/ZawarudoDB" target="_blank" rel="noopener noreferrer" aria-label="Abrir Instagram de Zawa">
+            <svg class="social-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M7.2 2h9.6A5.2 5.2 0 0 1 22 7.2v9.6a5.2 5.2 0 0 1-5.2 5.2H7.2A5.2 5.2 0 0 1 2 16.8V7.2A5.2 5.2 0 0 1 7.2 2Zm0 2.1a3.1 3.1 0 0 0-3.1 3.1v9.6a3.1 3.1 0 0 0 3.1 3.1h9.6a3.1 3.1 0 0 0 3.1-3.1V7.2a3.1 3.1 0 0 0-3.1-3.1H7.2Zm4.8 3.2a4.7 4.7 0 1 1 0 9.4 4.7 4.7 0 0 1 0-9.4Zm0 2.1a2.6 2.6 0 1 0 0 5.2 2.6 2.6 0 0 0 0-5.2Zm5-2.5a1.1 1.1 0 1 1 0 2.2 1.1 1.1 0 0 1 0-2.2Z"/></svg>
+          </a>
+          <a class="social-link tiktok" href="https://www.tiktok.com/@ZawarudoDB" target="_blank" rel="noopener noreferrer" aria-label="Abrir TikTok de Zawa">
+            <svg class="social-logo" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M14.2 3c.35 2.6 1.82 4.15 4.55 4.35v4.05a8.5 8.5 0 0 1-4.45-1.35v5.9c0 3.05-2.35 5.55-5.55 5.55A5.35 5.35 0 0 1 3.2 16.1c0-3.35 2.95-5.85 6.25-5.32v4.12a1.7 1.7 0 1 0 1.1 1.6V3h3.65Z"/></svg>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </main>
+
+  <aside class="drawer" id="drawer" aria-live="polite" aria-label="Ficha ampliada del comando">
+    <button class="drawer-close" id="drawerClose" type="button" aria-label="Cerrar ficha">×</button>
+    <div id="drawerContent"></div>
+  </aside>
+
+<script src="script.js" defer></script>
+</body>
+</html>
