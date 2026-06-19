@@ -10,7 +10,10 @@
     return response.json();
   }
 
-  const commands = await zawaLoadCommandsData();
+  const zawaCommandsReady = zawaLoadCommandsData();
+  window.ZAWA_COMMANDS_READY = zawaCommandsReady;
+  const commands = await zawaCommandsReady;
+  window.ZAWA_COMMANDS = commands;
 
 const realmNames = {
       todos:'Todos', sapere:'Sapere', economia:'Economía', rituales:'Rituales', titanes:'Asedio', sombras:'Inframundo', maleficios:'Maleficios', cemies:'El Ojo'
@@ -1076,6 +1079,7 @@ const realmNames = {
         return String(value || '').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
       }
       function commandsData(){
+        if(Array.isArray(window.ZAWA_COMMANDS)) return window.ZAWA_COMMANDS;
         try{return JSON.parse(qs('#commands-data')?.textContent || '[]');}
         catch{return [];}
       }
@@ -1470,7 +1474,11 @@ const realmNames = {
         }
       }
 
-      function init(){
+      async function init(){
+        if(window.ZAWA_COMMANDS_READY && !Array.isArray(window.ZAWA_COMMANDS)){
+          try{ window.ZAWA_COMMANDS = await window.ZAWA_COMMANDS_READY; }
+          catch(error){ console.warn('[Zawa] No se pudo cargar data/commands-data.json', error); }
+        }
         ensureCards();
         renderInstant(activeRealmHard, false);
         setDivineTierHard(0);
@@ -1891,7 +1899,7 @@ function zawaFixAltarVerticalPlacement(){
         <code>${escapeHtml(item.syntax || item.command || '')}</code>
         <p>${escapeHtml(item.description || '')}</p>
         ${item.note ? `<small>${escapeHtml(item.note)}</small>` : ''}
-        <button class="copy-btn mods-copy" type="button" data-mod-copy="${escapeHtml(item.command || item.syntax || '')}">Copiar comando</button>
+        <button class="copy-btn mods-copy" type="button" data-mod-copy="${escapeHtml(item.syntax || item.command || '')}">Copiar comando</button>
       </article>
     `).join('');
 

@@ -1,142 +1,123 @@
 [
   {
-    "group": "Guardia del chat",
-    "icon": "⏱️",
-    "title": "Timeout",
-    "command": "/timeout",
-    "syntax": "/timeout usuario segundos razón",
-    "description": "Silencia temporalmente a un usuario cuando rompe el ritmo del Reino.",
-    "note": "Ejemplo: /timeout usuario 60 spam",
-    "tags": ["timeout", "silenciar", "castigo", "moderacion"]
+    "group": "Rituales de retos",
+    "icon": "✅",
+    "title": "Ritual cumplido",
+    "command": "!cumplido",
+    "syntax": "!cumplido",
+    "description": "Declara que el reto activo fue cumplido. Cierra las apuestas y reparte las ofrendas a favor de Zawa.",
+    "note": "Solo usar cuando el reto terminó y Zawa cumplió.",
+    "tags": [
+      "cumplido",
+      "reto",
+      "apuestas",
+      "ritual",
+      "zawa",
+      "mod"
+    ]
   },
   {
-    "group": "Guardia del chat",
+    "group": "Rituales de retos",
+    "icon": "💀",
+    "title": "Ritual fallido",
+    "command": "!falle",
+    "syntax": "!falle  /  !fallo",
+    "description": "Declara que el reto activo falló. Cierra las apuestas y reparte las ofrendas en contra de Zawa.",
+    "note": "!fallo funciona como alias de !falle.",
+    "tags": [
+      "falle",
+      "fallo",
+      "reto",
+      "apuestas",
+      "ritual",
+      "mod"
+    ]
+  },
+  {
+    "group": "Rituales de retos",
     "icon": "↩️",
-    "title": "Quitar timeout",
-    "command": "/untimeout",
-    "syntax": "/untimeout usuario",
-    "description": "Retira un timeout si fue aplicado por error o si ya se resolvió la situación.",
-    "note": "Úsalo solo cuando el Consejo decida liberar al usuario.",
-    "tags": ["untimeout", "perdon", "liberar"]
+    "title": "Cancelar ritual",
+    "command": "!cancelar",
+    "syntax": "!cancelar",
+    "description": "Cancela el reto activo y devuelve todas las FPZ apostadas a los usuarios.",
+    "note": "Úsalo si el reto se dañó, se activó mal o Zawa decide anularlo.",
+    "tags": [
+      "cancelar",
+      "reto",
+      "devolver",
+      "apuestas",
+      "mod"
+    ]
   },
   {
-    "group": "Guardia del chat",
-    "icon": "⛔",
-    "title": "Ban",
-    "command": "/ban",
-    "syntax": "/ban usuario razón",
-    "description": "Expulsa a un usuario del chat cuando cruza una línea seria.",
-    "note": "Reservado para spam grave, acoso, insultos fuertes o ataques directos.",
-    "tags": ["ban", "expulsar", "grave"]
+    "group": "Pruebas del sistema",
+    "icon": "🔊",
+    "title": "Probar alerta de bits / La Voz",
+    "command": "!testbits",
+    "syntax": "!testbits mensaje de prueba",
+    "description": "Dispara una prueba del sistema de voz/alerta como si fuera una alerta de bits.",
+    "note": "Sirve para verificar audio, widget y conexión antes o durante el directo.",
+    "tags": [
+      "testbits",
+      "voz",
+      "alerta",
+      "bits",
+      "lavoz",
+      "prueba",
+      "mod"
+    ]
   },
   {
-    "group": "Guardia del chat",
-    "icon": "🕊️",
-    "title": "Quitar ban",
-    "command": "/unban",
-    "syntax": "/unban usuario",
-    "description": "Retira un ban cuando Zawa o el Consejo autoricen la vuelta del usuario.",
-    "note": "No usar sin autorización si el ban fue grave.",
-    "tags": ["unban", "perdon", "reingreso"]
+    "group": "Pruebas del sistema",
+    "icon": "🕯️",
+    "title": "Abrir mercado manualmente",
+    "command": "!testmercado",
+    "syntax": "!testmercado almas  /  !testmercado fpz",
+    "description": "Abre manualmente el Mercado de las Almas o el Mercado Común para pruebas o control del directo.",
+    "note": "Si no escribes tipo, abre Mercado de las Almas por defecto.",
+    "tags": [
+      "testmercado",
+      "mercado",
+      "almas",
+      "fpz",
+      "prueba",
+      "mod"
+    ]
   },
   {
-    "group": "Control de caos",
-    "icon": "🐢",
-    "title": "Modo lento",
-    "command": "/slow",
-    "syntax": "/slow segundos",
-    "description": "Reduce la velocidad del chat cuando hay demasiados mensajes seguidos.",
-    "note": "Ejemplo: /slow 10",
-    "tags": ["slow", "lento", "chat"]
+    "group": "Pruebas del sistema",
+    "icon": "👁️",
+    "title": "Disparar evento del Ojo",
+    "command": "!testojo",
+    "syntax": "!testojo jackpot 30  /  !testojo loteria 60  /  !testojo mini 120  /  !testojo mult 45",
+    "description": "Activa manualmente un evento del Ojo de Zawa durante una cantidad de segundos.",
+    "note": "Eventos válidos: jackpot, loteria, mini, mult. Duración mínima interna: 5 segundos.",
+    "tags": [
+      "testojo",
+      "ojo",
+      "jackpot",
+      "loteria",
+      "mini",
+      "mult",
+      "evento",
+      "mod"
+    ]
   },
   {
-    "group": "Control de caos",
-    "icon": "⚡",
-    "title": "Quitar modo lento",
-    "command": "/slowoff",
-    "syntax": "/slowoff",
-    "description": "Devuelve el chat a velocidad normal cuando el caos vuelve a estar controlado.",
-    "note": "Ideal después de sorteos, raids o momentos de mucho spam.",
-    "tags": ["slowoff", "normal", "chat"]
-  },
-  {
-    "group": "Control de caos",
-    "icon": "🧹",
-    "title": "Limpiar chat",
-    "command": "/clear",
-    "syntax": "/clear",
-    "description": "Limpia el chat visible cuando hay spam, spoilers o mensajes que dañan el ambiente.",
-    "note": "Úsalo con cuidado: borra la vista del chat para todos.",
-    "tags": ["clear", "limpiar", "spam"]
-  },
-  {
-    "group": "Control de caos",
-    "icon": "🗑️",
-    "title": "Borrar mensaje",
-    "command": "/delete",
-    "syntax": "/delete id_del_mensaje",
-    "description": "Elimina un mensaje puntual sin castigar directamente al usuario.",
-    "note": "Desde Twitch suele hacerse más fácil con la interfaz del chat.",
-    "tags": ["delete", "borrar", "mensaje"]
-  },
-  {
-    "group": "Puertas del Reino",
-    "icon": "🚪",
-    "title": "Solo seguidores",
-    "command": "/followers",
-    "syntax": "/followers tiempo",
-    "description": "Permite escribir solo a seguidores con una antigüedad mínima.",
-    "note": "Ejemplo: /followers 10m",
-    "tags": ["followers", "seguidores", "puerta"]
-  },
-  {
-    "group": "Puertas del Reino",
-    "icon": "🔓",
-    "title": "Quitar solo seguidores",
-    "command": "/followersoff",
-    "syntax": "/followersoff",
-    "description": "Abre el chat nuevamente a todos los visitantes.",
-    "note": "Útil después de controlar bots o spam externo.",
-    "tags": ["followersoff", "abrir", "chat"]
-  },
-  {
-    "group": "Puertas del Reino",
-    "icon": "👑",
-    "title": "Solo subs",
-    "command": "/subscribers",
-    "syntax": "/subscribers",
-    "description": "Activa el modo solo suscriptores en momentos de caos extremo.",
-    "note": "Medida fuerte; usar solo si Zawa lo permite.",
-    "tags": ["subscribers", "subs", "modo"]
-  },
-  {
-    "group": "Puertas del Reino",
-    "icon": "🌌",
-    "title": "Quitar solo subs",
-    "command": "/subscribersoff",
-    "syntax": "/subscribersoff",
-    "description": "Devuelve el chat a su apertura normal después de un bloqueo fuerte.",
-    "note": "Confirma que el chat esté estable antes de quitarlo.",
-    "tags": ["subscribersoff", "subs", "abrir"]
-  },
-  {
-    "group": "Ritual de cierre",
-    "icon": "📣",
-    "title": "Raid",
-    "command": "/raid",
-    "syntax": "/raid canal",
-    "description": "Envía el Reino hacia otro canal al cerrar directo.",
-    "note": "Ejemplo: /raid nombreDelCanal",
-    "tags": ["raid", "cierre", "stream"]
-  },
-  {
-    "group": "Ritual de cierre",
-    "icon": "🛑",
-    "title": "Cancelar raid",
-    "command": "/unraid",
-    "syntax": "/unraid",
-    "description": "Cancela una raid preparada antes de que se ejecute.",
-    "note": "Útil si se escribió mal el canal o Zawa cambia de objetivo.",
-    "tags": ["unraid", "cancelar", "raid"]
+    "group": "Altares de la Gloria",
+    "icon": "🏛️",
+    "title": "Purificar Altares",
+    "command": "!resetaltares",
+    "syntax": "!resetaltares",
+    "description": "Reinicia manualmente los Altares de la Gloria y comienza una nueva semana del reino.",
+    "note": "Úsalo solo cuando Zawa indique reinicio semanal o corrección de datos.",
+    "tags": [
+      "resetaltares",
+      "altares",
+      "gloria",
+      "semanal",
+      "reset",
+      "mod"
+    ]
   }
 ]

@@ -38,5 +38,6 @@ Se añadió una sección `#sala-mods` con acceso por sello temporal.
 - El estado desbloqueado usa `sessionStorage`, no `localStorage`.
 - Al cerrar la pestaña, el acceso se pierde.
 - Los comandos se editan en `data/mod-commands.json`.
+- La Sala de Mods usa los comandos de AccionZ v11.3 que no deben mostrarse en el listado público: cierre/cancelación de retos, pruebas del sistema y reinicio de Altares.
 
 Nota: esta opción es una barrera visual/práctica para GitHub Pages, no seguridad real de backend. No debe contener contraseñas, tokens, datos privados ni comandos peligrosos que no puedan ser vistos públicamente.
