@@ -10244,3 +10244,45 @@
   .intro-reino .intro-actions{gap:10px;}
   .intro-reino .intro-action{width:100%;text-align:center;justify-content:center;}
 }
+
+/* FIX Zawa 2026-06: palabras del sello visibles en desktop.
+   Evita que ALMAS, EdGhost y _Lilithxxer.00_ queden cortados por el panel. */
+.zawa-logo-sanctum,
+.artifact-panel.codex-artifact.zawa-logo-sanctum,
+.zawa-sanctum-wrap,
+.zawa-emblem-stage{
+  overflow:visible!important;
+}
+
+.zawa-emblem-stage .zawa-word,
+.zawa-emblem-stage .zawa-mods-panel strong{
+  max-width:none!important;
+  clip-path:none!important;
+  overflow:visible!important;
+  text-overflow:clip!important;
+}
+
+.zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(1){
+  --x:-252px;
+  --y:82px;
+  --r:-18deg;
+  --s:1.02;
+}
+
+.zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(2){
+  --x:178px;
+  --y:-194px;
+  --r:12deg;
+  --s:.92;
+}
+
+@media (max-width:900px){
+  .zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(1){--x:-202px;--y:62px;}
+  .zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(2){--x:118px;--y:-166px;--s:.88;}
+}
+
+@media (max-width:580px){
+  .zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(1){--x:-140px;--y:52px;}
+  .zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(2){--x:58px;--y:-136px;--s:.76;}
+}
+
