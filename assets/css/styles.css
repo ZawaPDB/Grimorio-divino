@@ -6588,12 +6588,26 @@
     .rank-icon{
       display:grid;
       place-items:center;
-      width:48px;
-      height:48px;
+      width:58px;
+      height:58px;
       background:#070410;
       border:2px solid rgba(255,255,255,.16);
       box-shadow:4px 4px 0 rgba(0,0,0,.42);
-      font-size:24px;
+      font-size:26px;
+    }
+
+    .rank-icon--img{
+      overflow:hidden;
+      background:linear-gradient(135deg, rgba(255,203,69,.13), rgba(176,38,255,.09) 55%, rgba(7,4,16,.92));
+      border-color:rgba(255,203,69,.34);
+    }
+
+    .rank-icon--img img{
+      width:100%;
+      height:100%;
+      object-fit:contain;
+      display:block;
+      filter:drop-shadow(0 0 7px rgba(255,203,69,.32));
     }
 
     .rank-card strong{
