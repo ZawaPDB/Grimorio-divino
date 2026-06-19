@@ -41,3 +41,10 @@ Se añadió una sección `#sala-mods` con acceso por sello temporal.
 - La Sala de Mods usa los comandos de AccionZ v11.3 que no deben mostrarse en el listado público: cierre/cancelación de retos, pruebas del sistema y reinicio de Altares.
 
 Nota: esta opción es una barrera visual/práctica para GitHub Pages, no seguridad real de backend. No debe contener contraseñas, tokens, datos privados ni comandos peligrosos que no puedan ser vistos públicamente.
+
+
+## Corrección Ponytail — Pergaminos
+
+El menú de pergaminos usa `assets/js/pergaminos-controller.js` como controlador aislado.
+Carga `data/commands-data.json`, renderiza las cartas, filtros, búsqueda, copia y drawer sin depender de bloques JSON incrustados en el HTML.
+La Sala de Mods sigue usando `data/mod-commands.json`.
