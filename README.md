@@ -48,3 +48,8 @@ Nota: esta opción es una barrera visual/práctica para GitHub Pages, no segurid
 El menú de pergaminos usa `assets/js/pergaminos-controller.js` como controlador aislado.
 Carga `data/commands-data.json`, renderiza las cartas, filtros, búsqueda, copia y drawer sin depender de bloques JSON incrustados en el HTML.
 La Sala de Mods sigue usando `data/mod-commands.json`.
+
+
+## Intro del Reino
+
+La guía inicial que reemplaza La Senda del Viajero se edita en `data/intro-data.json`. El comportamiento está aislado en `assets/js/intro-controller.js` siguiendo Ponytail: contenido separado, controlador pequeño y sin dependencias nuevas.

@@ -1,0 +1,166 @@
+{
+  "eyebrow": "Guía del Querubín",
+  "title": "Antes de abrir el Grimorio",
+  "subtitle": "Aprende en 30 segundos cómo funciona el Reino de los Querubines.",
+  "items": [
+    {
+      "id": "reino",
+      "number": "01",
+      "label": "Reino",
+      "title": "¿Qué es el Reino de los Querubines?",
+      "summary": "Comunidad, pequeños Dioses, rangos y presencia dentro del directo.",
+      "paragraphs": [
+        "El Reino de los Querubines es la comunidad de Zawa. Aquí nadie llega como simple espectador: cada persona que entra al directo puede convertirse en parte del Reino, participar en el chat, usar poderes y ganar presencia entre los pequeños Dioses.",
+        "Los querubines pueden crecer dentro de la jerarquía del Reino. Existen rangos, títulos y formas de reconocimiento para quienes apoyan, participan y dejan huella en los directos.",
+        "Para conocer la jerarquía completa, visita la sección Rangos."
+      ],
+      "actions": [
+        {
+          "label": "Ver Rangos",
+          "view": "rangos",
+          "href": "#rangos"
+        }
+      ]
+    },
+    {
+      "id": "caos",
+      "number": "02",
+      "label": "Caos",
+      "title": "¿Qué es el Caos del Reino?",
+      "summary": "La energía que despierta poderes, eventos, apuestas, batallas y rituales.",
+      "intro": "El Reino de los Querubines cuenta con mucha energía desbordante, y cuando esa fuerza se acumula, el Caos despierta y libera sus poderes sobre el directo.",
+      "paragraphs": [
+        "El Caos es el sistema de poderes del Reino. Gracias a él puedes activar comandos, rituales, recompensas, apuestas, batallas, mercados, maleficios y eventos durante el directo.",
+        "Cada poder tiene una función. Algunos te ayudan a ganar FPZ, otros te permiten retar a Zawa, entrar en eventos, atacar enemigos, tentar al destino o provocar momentos inesperados en el chat.",
+        "Para ver todos los poderes disponibles, entra al Pergamino."
+      ],
+      "actions": [
+        {
+          "label": "Ver Pergamino",
+          "view": "pergaminos",
+          "href": "#grimorio"
+        }
+      ]
+    },
+    {
+      "id": "comandos",
+      "number": "03",
+      "label": "Comandos",
+      "title": "¿Qué son los comandos?",
+      "summary": "Los poderes que escribes en Twitch para interactuar con el directo.",
+      "paragraphs": [
+        "Los comandos son los poderes que puedes escribir en el chat de Twitch para interactuar con el directo.",
+        "¿Te cuesta aprenderlos todos? No te preocupes, para eso está el Pergamino: ahí puedes ver qué hace cada comando, cuánto cuesta, cuándo usarlo y un ejemplo listo para copiar.",
+        "Empieza con comandos simples como !presente, !zmap, !cofre o !ranking."
+      ],
+      "actions": [
+        {
+          "label": "Ver todos los comandos",
+          "view": "pergaminos",
+          "href": "#grimorio"
+        },
+        {
+          "label": "Buscar un comando",
+          "view": "pergaminos",
+          "href": "#grimorio",
+          "action": "focus-search"
+        }
+      ]
+    },
+    {
+      "id": "rah",
+      "number": "04",
+      "label": "Rah",
+      "title": "¿Quién es Rah?",
+      "summary": "La entidad que abre el camino para desafiar a Zawa.",
+      "intro": "El Reino cuenta con Dioses, Titanes y Primordiales que desafían, colaboran o atacan al Reino. Entre esas entidades, una de las más importantes es Rah.",
+      "paragraphs": [
+        "Rah es la entidad que abre el camino para desafiar a Zawa.",
+        "Al invocar a Rah, puedes aceptar un reto contra el amo del directo. Si el desafío se activa, el Reino observa, el destino se mueve y los demás querubines pueden apostar si Zawa cumple o falla.",
+        "Si quieres provocar tensión, risa y caos en el directo, Rah es una de las puertas principales."
+      ],
+      "actions": [
+        {
+          "label": "Desafiar a Zawa con Rah",
+          "view": "pergaminos",
+          "href": "#grimorio",
+          "action": "salrah"
+        }
+      ]
+    },
+    {
+      "id": "monedas",
+      "number": "05",
+      "label": "FPZ / Almas / Gloria",
+      "title": "¿Qué son FPZ, Almas y Gloria?",
+      "summary": "Las marcas visibles de presencia, ofrendas y apoyo dentro del Reino.",
+      "intro": "Todo reino necesita símbolos de poder. En el Reino de los Querubines, la presencia, las ofrendas y el apoyo no desaparecen en el aire: se transforman en marcas visibles dentro del Grimorio.",
+      "paragraphs": [
+        "FPZ son las Fotopatas de Zawa: la moneda del Reino. Sirven para participar en comandos, cofres, apuestas, mercados y otros poderes.",
+        "Almas representan los bits. Son ofrendas que pueden activar eventos especiales y mover fuerzas mayores dentro del Reino.",
+        "Gloria representa las subs regaladas. Quienes entregan Gloria pueden aparecer en los Altares y ser recordados por el Reino."
+      ],
+      "actions": [
+        {
+          "label": "Ver Glosario",
+          "view": "glosario",
+          "href": "#glosario"
+        },
+        {
+          "label": "Ver Altares",
+          "view": "altares",
+          "href": "#gloria"
+        }
+      ]
+    },
+    {
+      "id": "rama",
+      "number": "06",
+      "label": "Primer camino",
+      "title": "¿Qué rama debo abrir primero?",
+      "summary": "Ruta recomendada para empezar sin perderte entre poderes.",
+      "paragraphs": [
+        "Si eres nuevo, empieza por Sapere, porque ahí están las guías y comandos básicos.",
+        "Luego pasa a Economía para entender FPZ, cofres y rankings.",
+        "Cuando quieras participar en eventos más intensos, explora Rituales, Asedio, Inframundo, Maleficios y El Ojo."
+      ],
+      "actions": [
+        {
+          "label": "Abrir Sapere",
+          "view": "pergaminos",
+          "href": "#grimorio",
+          "action": "sapere"
+        },
+        {
+          "label": "Ver todos",
+          "view": "pergaminos",
+          "href": "#grimorio"
+        }
+      ]
+    }
+  ],
+  "actions": [
+    {
+      "label": "Ver todos los comandos",
+      "view": "pergaminos",
+      "href": "#grimorio"
+    },
+    {
+      "label": "Buscar un comando",
+      "view": "pergaminos",
+      "href": "#grimorio",
+      "action": "focus-search"
+    },
+    {
+      "label": "Desafiar a Zawa con Rah",
+      "view": "pergaminos",
+      "href": "#grimorio",
+      "action": "salrah"
+    },
+    {
+      "label": "Ver rangos del Reino",
+      "view": "rangos",
+      "href": "#rangos"
+    }
+  ]
+}

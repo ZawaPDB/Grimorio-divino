@@ -24,7 +24,7 @@
       <div class="brand-title">Grimorio de los Poderes Divinos<span>archivo sagrado del reino</span></div>
     </a>
     <nav class="nav" aria-label="Navegación principal">
-      <a href="#senda" data-view="senda">La Senda</a>
+      <a href="#senda" data-view="senda">Inicio</a>
       <a href="#grimorio" data-view="pergaminos">Pergaminos</a>
       <a href="#sala-mods" data-view="mods">Sala de Mods</a>
       <a href="#glosario" data-view="glosario">Glosario del Reino</a>
@@ -67,8 +67,8 @@
           Estas páginas no fueron escritas: fueron <strong>reveladas</strong>. Aquí descansa todo el saber que un pequeño Dios necesita para caminar el reino — forjar su fortuna en Fotopatas, invocar los rituales ante El Eterno, alzarse cuando despierte el Titán del Vacío y sobrevivir a lo que acecha entre las Sombras.
         </p>
         <div class="hero-actions">
-          <a class="pixel-btn primary" href="#grimorio" data-view="pergaminos">Abrir el grimorio</a>
-          <a class="pixel-btn" href="#ruta" data-view="senda">Soy nuevo en el reino</a>
+          <a class="pixel-btn primary" href="#ruta" data-view="senda">Soy nuevo en el reino</a>
+          <a class="pixel-btn" href="#grimorio" data-view="pergaminos">Abrir el grimorio</a>
         </div>
 
         <section class="hero-altars-slider" aria-label="Menciones honoríficas del Reino">
@@ -303,22 +303,8 @@
       </div>
     </section>
 
-    <section id="ruta" class="section" aria-labelledby="ruta-title">
-      <div class="section-head">
-        <div>
-          <div class="kicker">Primeros pasos del viajero</div>
-          <h2 id="ruta-title">La Senda del Viajero</h2>
-        </div>
-        <p>¿Primera vez en el Reino? Aquí empieza tu camino. Cada poder se invoca escribiendo su palabra <b>en el chat del directo</b> (Twitch o Kick). Si un poder te confunde, pregúntale al grimorio con <code>!info</code>; si quieres ver una rama completa, ábrela con <code>!PZ</code>. Estos son tus primeros pasos.</p>
-      </div>
-      <div class="path-grid">
-        <article class="path-card"><b>01</b><h3>Abre el mapa</h3><p>Tu punto de partida: muestra todas las rutas del reino y por dónde puedes ir.</p><code>!zmap</code><span class="path-where">⌨ Escríbelo en el chat del directo</span></article>
-        <article class="path-card"><b>02</b><h3>Despliega un pergamino</h3><p>Abre una rama completa de poderes. Ej: <code>!PZ sapere</code>, <code>!PZ economia</code>, <code>!PZ sombras</code>.</p><code>!PZ [rama]</code><span class="path-where">⌨ En el chat del directo</span></article>
-        <article class="path-card"><b>03</b><h3>Pregunta por un poder</h3><p>¿No sabes qué hace algo? El grimorio te lo explica. Ej: <code>!info cofre</code>, <code>!info robar</code>.</p><code>!info [poder]</code><span class="path-where">⌨ En el chat del directo</span></article>
-        <article class="path-card"><b>04</b><h3>Consulta tu poder</h3><p>Revisa tus FPZ antes de apostar, abrir cofres, invocar a Rah o entrar al mercado.</p><code>!wacal</code><span class="path-where">⌨ En el chat del directo</span></article>
-        <article class="path-card"><b>05</b><h3>Participa y gana</h3><p>Consigue FPZ con cofres, duelos, ruleta, misiones y los eventos activos del reino.</p><code>!cofre</code><span class="path-where">⌨ En el chat del directo</span></article>
-        <article class="path-card"><b>06</b><h3>Entra al ritual</h3><p>Cuando domines las reglas, reta al destino y deja que el chat decida tu suerte.</p><code>!SalRah</code><span class="path-where">⌨ En el chat del directo</span></article>
-      </div>
+    <section id="ruta" class="section intro-reino-section" aria-labelledby="intro-reino-title">
+      <div id="introReinoMount" data-intro-reino></div>
     </section>
 <section class="section zawa-senda-core" id="senda-nucleo">
       <div class="section-head">
@@ -711,6 +697,7 @@ Exigencias
   </aside>
 
   <script type="module" src="assets/js/app.js"></script>
+  <script type="module" src="assets/js/intro-controller.js"></script>
   <script type="module" src="assets/js/pergaminos-controller.js"></script>
 </body>
 </html>

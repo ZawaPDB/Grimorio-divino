@@ -760,7 +760,10 @@ const realmNames = {
           '.stream-status-card',
           '.staff-person',
           '.mods-lock-card',
-          '.mods-command-card'
+          '.mods-command-card',
+          '.intro-reino',
+          '.intro-tab',
+          '.intro-detail'
         ].join(',');
 
         els.forEach(section=>{
