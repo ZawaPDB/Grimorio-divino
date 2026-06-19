@@ -1,0 +1,657 @@
+[
+  {
+    "realm": "sapere",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-puertas\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-ff70b6267dfa.webp\" alt=\"\"></span>",
+    "title": "Puerta del Reino",
+    "command": "!zmap",
+    "syntax": "!zmap",
+    "cost": "Gratis",
+    "access": "Todos",
+    "description": "Abre el mapa general del reino y muestra las rutas principales del Grimorio: Sapere, Economía, Rituales, Cacería del Titán, Sombras y Cemíes.",
+    "lore": "El primer pergamino. Todo viajero debe leerlo antes de tocar un altar.",
+    "tags": [
+      "inicio",
+      "ayuda",
+      "mapa"
+    ]
+  },
+  {
+    "realm": "sapere",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-info\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-f2f5ec821514.webp\" alt=\"\"></span>",
+    "title": "Información de Poder",
+    "command": "!info",
+    "syntax": "!info [poder]",
+    "cost": "Gratis",
+    "access": "Todos",
+    "description": "Consulta la explicación específica de un comando. Ejemplos: !info cofre, !info SalRah, !info robar, !info cajanegra.",
+    "lore": "El bibliotecario del reino traduce los símbolos para los mortales.",
+    "tags": [
+      "ayuda",
+      "detalle"
+    ]
+  },
+  {
+    "realm": "sapere",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-wacal\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-6c3115abc9ec.webp\" alt=\"\"></span>",
+    "title": "Wacal de FPZ",
+    "command": "!wacal",
+    "syntax": "!wacal | !wacal [usuario]",
+    "cost": "Gratis",
+    "access": "Todos",
+    "description": "Consulta tus FPZ o las FPZ de otro habitante del reino.",
+    "lore": "El saco donde se escucha el eco metálico de tus fotopatas.",
+    "tags": [
+      "fpz",
+      "moneda",
+      "economia"
+    ]
+  },
+  {
+    "realm": "sapere",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-ranking\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-048dc56043c7.webp\" alt=\"\"></span>",
+    "title": "Ranking de FPZ",
+    "command": "!ranking",
+    "syntax": "!ranking",
+    "cost": "Gratis",
+    "access": "Todos",
+    "description": "Muestra el top 5 de habitantes con más FPZ del reino.",
+    "lore": "Solo los nombres más pesados quedan tallados en la piedra del salón.",
+    "tags": [
+      "ranking",
+      "fpz",
+      "top"
+    ]
+  },
+  {
+    "realm": "sapere",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-misiones\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-b4ed0d39d958.webp\" alt=\"\"></span>",
+    "title": "Misiones Diarias",
+    "command": "!misiones",
+    "syntax": "!misiones",
+    "cost": "Gratis",
+    "access": "Todos",
+    "description": "Muestra tus pruebas diarias del reino: duelos, cofres y apuestas. Completarlas otorga FPZ.",
+    "lore": "El reino premia a quien no solo mira, sino que participa.",
+    "tags": [
+      "misiones",
+      "progreso",
+      "fpz"
+    ]
+  },
+  {
+    "realm": "sapere",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-voz\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-75a1223b746e.webp\" alt=\"\"></span>",
+    "title": "La Voz del Reino",
+    "command": "!z",
+    "syntax": "!z [mensaje]",
+    "cost": "Gratis",
+    "access": "Rangos autorizados del Reino",
+    "description": "Permite enviar un mensaje para que la voz del Reino lo pronuncie durante el directo cuando el poder esté disponible.",
+    "lore": "Cuando el mensaje atraviesa el altar, el reino lo escucha con otra garganta.",
+    "tags": [
+      "voz",
+      "tts",
+      "mensaje"
+    ]
+  },
+  {
+    "realm": "sapere",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-asgard\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-7a63a62b3c1e.webp\" alt=\"\"></span>",
+    "title": "Asgard / Redes",
+    "command": "!asgard",
+    "syntax": "!asgard",
+    "cost": "Gratis",
+    "access": "Todos",
+    "description": "Muestra los reinos externos de Zawa: Discord, TikTok, Instagram, YouTube, Kick y Twitch.",
+    "lore": "El reino no termina en Twitch. Solo cambia de portal.",
+    "tags": [
+      "redes",
+      "comunidad",
+      "links"
+    ]
+  },
+  {
+    "realm": "sapere",
+    "icon": "📜",
+    "title": "Invocar la Lista",
+    "command": "!lista",
+    "syntax": "!lista",
+    "cost": "Gratis",
+    "access": "Todos",
+    "description": "Despliega todos los poderes del reino agrupados por categoría, directo en el chat.",
+    "lore": "Para el que no quiere leer pergaminos: el grimorio recita sus nombres de un solo golpe.",
+    "tags": [
+      "lista",
+      "comandos",
+      "menu",
+      "ayuda",
+      "poderes"
+    ]
+  },
+  {
+    "realm": "sapere",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-presente\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-6e7ea928dee2.webp\" alt=\"\"></span>",
+    "title": "Marcar Presencia",
+    "command": "!presente",
+    "syntax": "!presente",
+    "cost": "Gratis",
+    "access": "Solo en directo",
+    "description": "Te haces presente en el directo y recibes una pequeña recompensa de fotopatas, una vez por directo.",
+    "lore": "Alzas la mano entre la multitud. El reino te recompensa por estar cuando importó.",
+    "tags": [
+      "presente",
+      "fotopatas",
+      "fpz",
+      "presencia",
+      "directo"
+    ]
+  },
+  {
+    "realm": "economia",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-cofre\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-98233887ebf0.webp\" alt=\"\"></span>",
+    "title": "Cofre Sagrado",
+    "command": "!cofre",
+    "syntax": "!cofre",
+    "cost": "Gratis",
+    "access": "Todos",
+    "description": "Abre un cofre místico y gana FPZ aleatorias. Tiene cooldown aproximado de 5 minutos.",
+    "lore": "No todos los cofres brillan igual. Algunos despiertan cuando La Pulga está activa.",
+    "tags": [
+      "fpz",
+      "premio",
+      "cooldown"
+    ]
+  },
+  {
+    "realm": "economia",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-ruleta\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-e3653eac93af.webp\" alt=\"\"></span>",
+    "title": "Ruleta de las Nornas",
+    "command": "!ruleta",
+    "syntax": "!ruleta",
+    "cost": "4 FPZ",
+    "access": "Todos",
+    "description": "Gastas 4 FPZ y giras la ruleta: puedes ganar, perder o quedar marcado por el destino.",
+    "lore": "El hilo gira. La suerte no pregunta si estás listo.",
+    "tags": [
+      "azar",
+      "fpz",
+      "riesgo"
+    ]
+  },
+  {
+    "realm": "economia",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-duelo\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-058134c45980.webp\" alt=\"\"></span>",
+    "title": "Duelo Sagrado",
+    "command": "!duelo",
+    "syntax": "!duelo",
+    "cost": "Variable",
+    "access": "Todos",
+    "description": "Reta automáticamente a otro usuario del reino a un duelo por FPZ.",
+    "lore": "Dos nombres entran al círculo. Uno sale con gloria; el otro con polvo.",
+    "tags": [
+      "duelo",
+      "pvp",
+      "fpz"
+    ]
+  },
+  {
+    "realm": "economia",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-buscar\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-e505bb7b142a.webp\" alt=\"\"></span>",
+    "title": "Buscar en la Tormenta",
+    "command": "!buscar",
+    "syntax": "!buscar",
+    "cost": "Gratis",
+    "access": "Todos",
+    "description": "Solo funciona durante la Tormenta de Fotopatas. Permite recoger FPZ mientras el evento está activo.",
+    "lore": "Cuando llueven fotopatas, los rápidos recogen más que los distraídos.",
+    "tags": [
+      "evento",
+      "tormenta",
+      "fpz"
+    ]
+  },
+  {
+    "realm": "rituales",
+    "icon": "👁️",
+    "title": "Invocar a Rah",
+    "command": "!SalRah",
+    "syntax": "!SalRah",
+    "cost": "35 FPZ",
+    "access": "Todos",
+    "description": "Sacrifica 35 FPZ para invocar a Rah. Rah pregunta si deseas retar al amo Zawa.",
+    "lore": "Rah no concede retos. Rah pregunta si tienes valor para pedirlos.",
+    "tags": [
+      "reto",
+      "ritual",
+      "rah"
+    ]
+  },
+  {
+    "realm": "rituales",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-pacto-rah\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-c64bf5abda28.webp\" alt=\"\"></span>",
+    "title": "Aceptar o Rechazar a Rah",
+    "command": "!si / !no",
+    "syntax": "!si | !no",
+    "cost": "La ofrenda ya fue tomada",
+    "access": "Todos",
+    "description": "Al invocar a Rah, se debe sellar o huir del pacto aceptando (!si) o negándote a ello (!no). Rah no es tan benevolente y se lleva tus FPZ al portal.",
+    "lore": "Una vez la sombra escucha tu voz, el precio ya cruzó el portal.",
+    "tags": [
+      "rah",
+      "reto",
+      "confirmacion"
+    ]
+  },
+  {
+    "realm": "rituales",
+    "icon": "⚡",
+    "title": "Ofrenda al Destino",
+    "command": "!apuesto",
+    "syntax": "!apuesto [FPZ] gana zawa | !apuesto [FPZ] pierde zawa",
+    "cost": "Tu apuesta",
+    "access": "Todos",
+    "description": "Apuesta FPZ durante un reto activo. Puedes apostar en tu propio reto, pero no cambiar la apuesta una vez hecha.",
+    "lore": "El destino acepta una sola firma. Después de sellarla, no hay tinta que borre el pacto.",
+    "tags": [
+      "apuesta",
+      "reto",
+      "fpz"
+    ]
+  },
+  {
+    "realm": "rituales",
+    "icon": "🔥",
+    "title": "Portal de Ofrendas",
+    "command": "!ofrendas",
+    "syntax": "!ofrendas",
+    "cost": "Voluntario",
+    "access": "Todos",
+    "description": "Muestra el enlace sagrado para ofrendar aportes al canal y mantener viva la llama del Reino.",
+    "lore": "Cada ofrenda alimenta la llama que sostiene nuevas noches de directo.",
+    "tags": [
+      "donacion",
+      "support",
+      "canal"
+    ]
+  },
+  {
+    "realm": "rituales",
+    "icon": "🎲",
+    "title": "Elegir el Reto",
+    "command": "!r1 / !r2 / !r3 / !r4",
+    "syntax": "!r1 · !r2 · !r3 · !r4",
+    "cost": "Gratis",
+    "access": "Durante la elección de reto",
+    "description": "Cuando se abre la votación, eliges el reto que enfrentará el amo: !r1, !r2, !r3 o !r4.",
+    "lore": "Cuatro caminos se abren ante Rah. El reino decide cuál de ellos sangrará.",
+    "tags": [
+      "reto",
+      "r1",
+      "r2",
+      "r3",
+      "r4",
+      "elegir",
+      "salrah",
+      "votar"
+    ]
+  },
+  {
+    "realm": "titanes",
+    "icon": "💀",
+    "title": "Entrar al Boss Global",
+    "command": "!unirme",
+    "syntax": "!unirme",
+    "cost": "Gratis",
+    "access": "Todos durante boss activo",
+    "description": "Te une al combate contra El Titán del Vacío cuando el boss global está activo.",
+    "lore": "El suelo tiembla. Si entras, ya no eres espectador: eres parte del ejército.",
+    "tags": [
+      "boss",
+      "titan",
+      "combate"
+    ]
+  },
+  {
+    "realm": "titanes",
+    "icon": "⚔️",
+    "title": "Lista de Ataques",
+    "command": "!ataques",
+    "syntax": "!ataques",
+    "cost": "Gratis",
+    "access": "Todos durante boss activo",
+    "description": "Muestra los poderes disponibles contra el Boss Global.",
+    "lore": "Antes de golpear a un titán, aprende qué arma llevas en la mano.",
+    "tags": [
+      "boss",
+      "ataques"
+    ]
+  },
+  {
+    "realm": "titanes",
+    "icon": "🦵",
+    "title": "Patada de Nefilim",
+    "command": "!patada",
+    "syntax": "!patada",
+    "cost": "Cooldown de ataque",
+    "access": "Participantes del boss",
+    "description": "Ataque contra El Titán del Vacío. Daño base bajo, mayor frecuencia de aparición.",
+    "lore": "El primer golpe no siempre mata, pero anuncia la guerra.",
+    "tags": [
+      "boss",
+      "ataque"
+    ]
+  },
+  {
+    "realm": "titanes",
+    "icon": "🐾",
+    "title": "Garra del Pequeño Dios",
+    "command": "!garra",
+    "syntax": "!garra",
+    "cost": "Cooldown de ataque",
+    "access": "Participantes del boss",
+    "description": "Ataque contra el boss con daño superior a la patada.",
+    "lore": "Una marca pequeña puede abrir una grieta gigante.",
+    "tags": [
+      "boss",
+      "ataque"
+    ]
+  },
+  {
+    "realm": "titanes",
+    "icon": "🥊",
+    "title": "Golpe Olímpico",
+    "command": "!golpe",
+    "syntax": "!golpe",
+    "cost": "Cooldown de ataque",
+    "access": "Participantes del boss",
+    "description": "Ataque intermedio contra El Titán del Vacío.",
+    "lore": "El Olimpo no susurra. Impacta.",
+    "tags": [
+      "boss",
+      "ataque"
+    ]
+  },
+  {
+    "realm": "titanes",
+    "icon": "🔥",
+    "title": "Furia del Titán",
+    "command": "!furia",
+    "syntax": "!furia",
+    "cost": "Cooldown de ataque",
+    "access": "Participantes del boss",
+    "description": "Ataque poderoso contra el boss, con mayor daño potencial.",
+    "lore": "Para vencer a un titán, a veces debes hablar su idioma.",
+    "tags": [
+      "boss",
+      "ataque"
+    ]
+  },
+  {
+    "realm": "titanes",
+    "icon": "⚖️",
+    "title": "Juicio Primordial",
+    "command": "!juicio",
+    "syntax": "!juicio",
+    "cost": "Cooldown de ataque",
+    "access": "Participantes del boss",
+    "description": "Ataque de máximo rango contra el boss; daño alto y probabilidad baja dentro de la lógica del sistema.",
+    "lore": "Cuando el juicio cae, hasta el vacío recuerda su nombre.",
+    "tags": [
+      "boss",
+      "ataque"
+    ]
+  },
+  {
+    "realm": "sombras",
+    "icon": "🌑",
+    "title": "Invocar al Ladrón",
+    "command": "!robar",
+    "syntax": "!robar [usuario]",
+    "cost": "150 FPZ",
+    "access": "Todos",
+    "description": "Pagas 150 FPZ para intentar robar a otro usuario. Tiene 12% de éxito y cooldown de 300 segundos.",
+    "lore": "La sombra puede volver con oro... o con Anubis detrás.",
+    "tags": [
+      "robo",
+      "fpz",
+      "riesgo"
+    ]
+  },
+  {
+    "realm": "sombras",
+    "icon": "🕯️",
+    "title": "Catálogo del Mercado Negro",
+    "command": "!mercado",
+    "syntax": "!mercado",
+    "cost": "Gratis",
+    "access": "Todos si el mercado está abierto",
+    "description": "Muestra el catálogo del Mercado Negro o Mercado de las Almas cuando está abierto.",
+    "lore": "No todos los precios se pagan con monedas. Algunos se pagan con calma.",
+    "tags": [
+      "mercado",
+      "sombras"
+    ]
+  },
+  {
+    "realm": "sombras",
+    "icon": "🔪",
+    "title": "Abrir Mercado Común",
+    "command": "!mercado_fpz",
+    "syntax": "!mercado_fpz",
+    "cost": "5,000 FPZ",
+    "access": "Todos con saldo suficiente",
+    "description": "Invoca el Mercado Negro pagando 5,000 FPZ si no está abierto.",
+    "lore": "Una puerta aparece donde antes solo había pared.",
+    "tags": [
+      "mercado",
+      "fpz"
+    ]
+  },
+  {
+    "realm": "sombras",
+    "icon": "🗡️",
+    "title": "Sicario Nuevo",
+    "command": "!sicario_nuevo",
+    "syntax": "!sicario_nuevo [usuario]",
+    "cost": "2,000 FPZ",
+    "access": "Mercado activo",
+    "description": "Contrata un sicario con 25% de éxito para robar parte de las FPZ del objetivo.",
+    "lore": "Barato no significa seguro. Significa que puede fallar en silencio.",
+    "tags": [
+      "mercado",
+      "robo",
+      "riesgo"
+    ]
+  },
+  {
+    "realm": "sombras",
+    "icon": "🗡️",
+    "title": "Sicario Veterano",
+    "command": "!sicario_vet",
+    "syntax": "!sicario_vet [usuario]",
+    "cost": "3,000 FPZ",
+    "access": "Mercado de las Almas",
+    "description": "Contrata un sicario con éxito garantizado para robar parte de las FPZ del objetivo. Solo responde en el Mercado de las Almas.",
+    "lore": "No cobra por intentarlo. Cobra porque regresa.",
+    "tags": [
+      "mercado",
+      "almas",
+      "robo"
+    ]
+  },
+  {
+    "realm": "sombras",
+    "icon": "📜",
+    "title": "Info Privilegiada",
+    "command": "!infoprivada",
+    "syntax": "!infoprivada",
+    "cost": "500 FPZ",
+    "access": "Mercado activo + reto activo",
+    "description": "Revela por susurro cómo van las apuestas del reto activo.",
+    "lore": "La información no grita. Te espera detrás de una puerta cerrada.",
+    "tags": [
+      "mercado",
+      "apuestas",
+      "susurro"
+    ]
+  },
+  {
+    "realm": "sombras",
+    "icon": "🎲",
+    "title": "Manipular el Destino",
+    "command": "!manipular",
+    "syntax": "!manipular gana | !manipular pierde",
+    "cost": "700 FPZ",
+    "access": "Mercado de las Almas + reto activo",
+    "description": "Manipula tu apuesta durante un reto activo. Arte prohibido del Mercado de las Almas.",
+    "lore": "El destino se puede tocar, pero deja manchas en los dedos.",
+    "tags": [
+      "mercado",
+      "apuestas",
+      "almas"
+    ]
+  },
+  {
+    "realm": "maleficios",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-cajanegra\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-c1c7a9ccf85a.webp\" alt=\"\"></span>",
+    "title": "Caja Negra",
+    "command": "!cajanegra",
+    "syntax": "!cajanegra",
+    "cost": "900 FPZ",
+    "access": "Mercado de las Almas",
+    "description": "Puede dar premio, nada, trampa o quiebra total.",
+    "lore": "No se abre una caja negra. Se despierta.",
+    "tags": [
+      "mercado",
+      "azar",
+      "almas"
+    ]
+  },
+  {
+    "realm": "maleficios",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-bomba\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-ac51535e2053.webp\" alt=\"\"></span>",
+    "title": "Bomba FPZ",
+    "command": "!bomba",
+    "syntax": "!bomba",
+    "cost": "1,500 FPZ",
+    "access": "Mercado de las Almas",
+    "description": "Hace que todos los demás pierdan un porcentaje de sus FPZ.",
+    "lore": "No busca un enemigo. Busca una sala llena.",
+    "tags": [
+      "mercado",
+      "caos",
+      "almas"
+    ]
+  },
+  {
+    "realm": "maleficios",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-virus\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-c87ede3bb8a1.webp\" alt=\"\"></span>",
+    "title": "Virus Económico",
+    "command": "!virus",
+    "syntax": "!virus [usuario]",
+    "cost": "1,100 FPZ",
+    "access": "Mercado activo",
+    "description": "Anuncia un bloqueo económico temporal contra el objetivo.",
+    "lore": "No roba el cofre. Envenena la llave.",
+    "tags": [
+      "mercado",
+      "virus",
+      "control"
+    ]
+  },
+  {
+    "realm": "maleficios",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-totem\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-1d5222058527.webp\" alt=\"\"></span>",
+    "title": "Tótem Corrupto",
+    "command": "!totem",
+    "syntax": "!totem",
+    "cost": "730 FPZ",
+    "access": "Mercado activo",
+    "description": "Activa el Tótem Corrupto para alterar una próxima apertura del mercado.",
+    "lore": "Un objeto quieto puede mover todo el reino.",
+    "tags": [
+      "mercado",
+      "totem",
+      "evento"
+    ]
+  },
+  {
+    "realm": "maleficios",
+    "icon": "<span class=\"realm-tab-icon realm-tab-icon-maldicion\" aria-hidden=\"true\"><img src=\"assets/img/embedded/asset-1e206b0209b7.webp\" alt=\"\"></span>",
+    "title": "Maldición del Vacío",
+    "command": "!maldicion",
+    "syntax": "!maldicion | !maldición",
+    "cost": "10,000 FPZ",
+    "access": "Mercado de las Almas",
+    "description": "Tiene 65% de éxito. Si pega, reinicia las FPZ de todo el reino a cero, incluido quien la invoca.",
+    "lore": "No es una compra. Es una catástrofe con firma.",
+    "tags": [
+      "mercado",
+      "almas",
+      "catastrofe"
+    ]
+  },
+  {
+    "realm": "cemies",
+    "icon": "🛡️",
+    "title": "Defender el Tesoro",
+    "command": "!defender",
+    "syntax": "!defender",
+    "cost": "Gratis",
+    "access": "Evento de Invasión activo",
+    "description": "Se usa cuando las sombras atacan para defender el tesoro del reino.",
+    "lore": "Cuando la puerta cae, hasta el espectador levanta escudo.",
+    "tags": [
+      "evento",
+      "invasion"
+    ]
+  },
+  {
+    "realm": "cemies",
+    "icon": "🎰",
+    "title": "Jackpot del Ojo",
+    "command": "!jackpot",
+    "syntax": "!jackpot",
+    "cost": "50 FPZ",
+    "access": "Evento del Ojo activo",
+    "description": "Participa en el Jackpot del Ojo de Zawa durante el efecto activo.",
+    "lore": "El Ojo mira a todos, pero no premia a cualquiera.",
+    "tags": [
+      "evento",
+      "ojo",
+      "azar"
+    ]
+  },
+  {
+    "realm": "cemies",
+    "icon": "🎟️",
+    "title": "Lotería del Ojo",
+    "command": "!loteria",
+    "syntax": "!loteria",
+    "cost": "30 FPZ",
+    "access": "Evento del Ojo activo",
+    "description": "Participa en la Lotería del Ojo durante el efecto activo.",
+    "lore": "Una papeleta pequeña puede abrir una grieta grande.",
+    "tags": [
+      "evento",
+      "ojo",
+      "azar"
+    ]
+  },
+  {
+    "realm": "cemies",
+    "icon": "👹",
+    "title": "Atacar Mini Boss",
+    "command": "!atacar_mini",
+    "syntax": "!atacar_mini",
+    "cost": "Gratis",
+    "access": "Mini Boss del Ojo activo",
+    "description": "Ataca al Mini Boss cuando ese efecto del Ojo está activo.",
+    "lore": "No todos los jefes necesitan una montaña. Algunos caben dentro de un ojo.",
+    "tags": [
+      "evento",
+      "ojo",
+      "boss"
+    ]
+  }
+]
