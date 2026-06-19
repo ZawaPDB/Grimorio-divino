@@ -681,6 +681,10 @@ const realmNames = {
           byId('grimorio')
         ].filter(Boolean),
 
+        mods: [
+          byId('sala-mods')
+        ].filter(Boolean),
+
         glosario: [
           byId('glosario')
         ].filter(Boolean),
@@ -720,6 +724,7 @@ const realmNames = {
         }
 
         if(clean === 'codex' || clean === 'commands') return 'pergaminos';
+        if(clean === 'mods' || clean === 'sala-mods' || clean === 'consejo') return 'mods';
         return 'senda';
       }
 
@@ -750,7 +755,9 @@ const realmNames = {
           '.rank-card',
           '.rules-card',
           '.stream-status-card',
-          '.staff-person'
+          '.staff-person',
+          '.mods-lock-card',
+          '.mods-command-card'
         ].join(',');
 
         els.forEach(section=>{
@@ -1776,3 +1783,154 @@ function zawaFixAltarVerticalPlacement(){
     setInterval(zawaNoDemoFallbacks, 2000);
 
 })();
+
+/* Sala de Mods — sello temporal, sin usuario ni contraseña. */
+(()=>{
+  const ACCESS_HASH = '0894951488dab930fbc8b6363640c6f45a257ef781bc6253d8854e846b9800c1';
+  const SESSION_KEY = 'zawa_mod_room_unlocked';
+  const DATA_URL = 'data/mod-commands.json';
+
+  const shell = document.getElementById('modsShell');
+  const form = document.getElementById('modsAccessForm');
+  const input = document.getElementById('modAccessKey');
+  const feedback = document.getElementById('modsFeedback');
+  const lockCard = document.getElementById('modsLockCard');
+  const room = document.getElementById('modsCommandRoom');
+  const grid = document.getElementById('modsCommandGrid');
+  const empty = document.getElementById('modsEmptyState');
+  const search = document.getElementById('modsSearchInput');
+  const lockAgain = document.getElementById('modsLockAgain');
+
+  if(!shell || !form || !input || !room || !grid) return;
+
+  let modCommands = [];
+
+  function normalize(value){
+    return String(value || '').trim().toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g,'');
+  }
+
+  function escapeHtml(value){
+    return String(value ?? '').replace(/[&<>'"]/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[char]));
+  }
+
+  async function sha256(value){
+    const bytes = new TextEncoder().encode(value);
+    const hashBuffer = await crypto.subtle.digest('SHA-256', bytes);
+    return Array.from(new Uint8Array(hashBuffer)).map(byte => byte.toString(16).padStart(2,'0')).join('');
+  }
+
+  async function validSeal(value){
+    if(!window.crypto?.subtle) return false;
+    return await sha256(normalize(value)) === ACCESS_HASH;
+  }
+
+  function setFeedback(message, state=''){
+    if(!feedback) return;
+    feedback.textContent = message || '';
+    feedback.dataset.state = state;
+  }
+
+  function setUnlocked(unlocked){
+    shell.dataset.locked = unlocked ? 'false' : 'true';
+    lockCard.hidden = unlocked;
+    room.hidden = !unlocked;
+    if(unlocked){
+      sessionStorage.setItem(SESSION_KEY, 'true');
+      loadModCommands();
+      setTimeout(()=>search?.focus(), 80);
+    }else{
+      sessionStorage.removeItem(SESSION_KEY);
+      input.value = '';
+      setFeedback('Sala sellada.', 'neutral');
+      setTimeout(()=>input.focus(), 80);
+    }
+  }
+
+  async function loadModCommands(){
+    if(modCommands.length){
+      renderModCommands();
+      return;
+    }
+
+    grid.innerHTML = '<div class="mods-loading">Invocando comandos del Consejo...</div>';
+    try{
+      const response = await fetch(DATA_URL, {cache:'no-store'});
+      if(!response.ok) throw new Error(`No se pudo cargar ${DATA_URL}`);
+      modCommands = await response.json();
+      renderModCommands();
+    }catch(error){
+      grid.innerHTML = '<div class="mods-error">No se pudo cargar <code>data/mod-commands.json</code>. Revisa que el archivo esté subido en GitHub.</div>';
+      console.warn('[Zawa] Sala de Mods:', error);
+    }
+  }
+
+  function renderModCommands(){
+    const q = normalize(search?.value || '');
+    const list = modCommands.filter(item => {
+      const haystack = normalize([
+        item.group,
+        item.title,
+        item.command,
+        item.syntax,
+        item.description,
+        item.note,
+        ...(item.tags || [])
+      ].join(' '));
+      return !q || haystack.includes(q);
+    });
+
+    grid.innerHTML = list.map((item, index)=>`
+      <article class="mods-command-card" style="--mods-delay:${Math.min(index, 18) * 55}ms">
+        <div class="mods-card-top">
+          <span class="mods-card-icon" aria-hidden="true">${escapeHtml(item.icon || '✦')}</span>
+          <div>
+            <span class="mods-card-group">${escapeHtml(item.group || 'Moderación')}</span>
+            <h4>${escapeHtml(item.title || item.command || 'Comando mod')}</h4>
+          </div>
+        </div>
+        <code>${escapeHtml(item.syntax || item.command || '')}</code>
+        <p>${escapeHtml(item.description || '')}</p>
+        ${item.note ? `<small>${escapeHtml(item.note)}</small>` : ''}
+        <button class="copy-btn mods-copy" type="button" data-mod-copy="${escapeHtml(item.command || item.syntax || '')}">Copiar comando</button>
+      </article>
+    `).join('');
+
+    if(empty) empty.hidden = list.length !== 0;
+
+    grid.querySelectorAll('[data-mod-copy]').forEach(button=>{
+      button.addEventListener('click', async ()=>{
+        const value = button.dataset.modCopy || '';
+        try{
+          await navigator.clipboard.writeText(value);
+          button.textContent = 'Copiado';
+          setTimeout(()=>button.textContent = 'Copiar comando', 1100);
+        }catch{
+          button.textContent = 'Copia manual';
+          setTimeout(()=>button.textContent = 'Copiar comando', 1100);
+        }
+      });
+    });
+  }
+
+  form.addEventListener('submit', async event=>{
+    event.preventDefault();
+    setFeedback('Verificando sello...', 'neutral');
+    const ok = await validSeal(input.value);
+    if(ok){
+      setFeedback('Sello aceptado. Abriendo Sala de Mods.', 'ok');
+      setUnlocked(true);
+      return;
+    }
+    sessionStorage.removeItem(SESSION_KEY);
+    setFeedback('Sello incorrecto. El Consejo no responde.', 'error');
+    input.select();
+  });
+
+  search?.addEventListener('input', renderModCommands);
+  lockAgain?.addEventListener('click', ()=>setUnlocked(false));
+
+  if(sessionStorage.getItem(SESSION_KEY) === 'true'){
+    setUnlocked(true);
+  }
+})();
+

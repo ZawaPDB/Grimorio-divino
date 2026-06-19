@@ -1,0 +1,142 @@
+[
+  {
+    "group": "Guardia del chat",
+    "icon": "⏱️",
+    "title": "Timeout",
+    "command": "/timeout",
+    "syntax": "/timeout usuario segundos razón",
+    "description": "Silencia temporalmente a un usuario cuando rompe el ritmo del Reino.",
+    "note": "Ejemplo: /timeout usuario 60 spam",
+    "tags": ["timeout", "silenciar", "castigo", "moderacion"]
+  },
+  {
+    "group": "Guardia del chat",
+    "icon": "↩️",
+    "title": "Quitar timeout",
+    "command": "/untimeout",
+    "syntax": "/untimeout usuario",
+    "description": "Retira un timeout si fue aplicado por error o si ya se resolvió la situación.",
+    "note": "Úsalo solo cuando el Consejo decida liberar al usuario.",
+    "tags": ["untimeout", "perdon", "liberar"]
+  },
+  {
+    "group": "Guardia del chat",
+    "icon": "⛔",
+    "title": "Ban",
+    "command": "/ban",
+    "syntax": "/ban usuario razón",
+    "description": "Expulsa a un usuario del chat cuando cruza una línea seria.",
+    "note": "Reservado para spam grave, acoso, insultos fuertes o ataques directos.",
+    "tags": ["ban", "expulsar", "grave"]
+  },
+  {
+    "group": "Guardia del chat",
+    "icon": "🕊️",
+    "title": "Quitar ban",
+    "command": "/unban",
+    "syntax": "/unban usuario",
+    "description": "Retira un ban cuando Zawa o el Consejo autoricen la vuelta del usuario.",
+    "note": "No usar sin autorización si el ban fue grave.",
+    "tags": ["unban", "perdon", "reingreso"]
+  },
+  {
+    "group": "Control de caos",
+    "icon": "🐢",
+    "title": "Modo lento",
+    "command": "/slow",
+    "syntax": "/slow segundos",
+    "description": "Reduce la velocidad del chat cuando hay demasiados mensajes seguidos.",
+    "note": "Ejemplo: /slow 10",
+    "tags": ["slow", "lento", "chat"]
+  },
+  {
+    "group": "Control de caos",
+    "icon": "⚡",
+    "title": "Quitar modo lento",
+    "command": "/slowoff",
+    "syntax": "/slowoff",
+    "description": "Devuelve el chat a velocidad normal cuando el caos vuelve a estar controlado.",
+    "note": "Ideal después de sorteos, raids o momentos de mucho spam.",
+    "tags": ["slowoff", "normal", "chat"]
+  },
+  {
+    "group": "Control de caos",
+    "icon": "🧹",
+    "title": "Limpiar chat",
+    "command": "/clear",
+    "syntax": "/clear",
+    "description": "Limpia el chat visible cuando hay spam, spoilers o mensajes que dañan el ambiente.",
+    "note": "Úsalo con cuidado: borra la vista del chat para todos.",
+    "tags": ["clear", "limpiar", "spam"]
+  },
+  {
+    "group": "Control de caos",
+    "icon": "🗑️",
+    "title": "Borrar mensaje",
+    "command": "/delete",
+    "syntax": "/delete id_del_mensaje",
+    "description": "Elimina un mensaje puntual sin castigar directamente al usuario.",
+    "note": "Desde Twitch suele hacerse más fácil con la interfaz del chat.",
+    "tags": ["delete", "borrar", "mensaje"]
+  },
+  {
+    "group": "Puertas del Reino",
+    "icon": "🚪",
+    "title": "Solo seguidores",
+    "command": "/followers",
+    "syntax": "/followers tiempo",
+    "description": "Permite escribir solo a seguidores con una antigüedad mínima.",
+    "note": "Ejemplo: /followers 10m",
+    "tags": ["followers", "seguidores", "puerta"]
+  },
+  {
+    "group": "Puertas del Reino",
+    "icon": "🔓",
+    "title": "Quitar solo seguidores",
+    "command": "/followersoff",
+    "syntax": "/followersoff",
+    "description": "Abre el chat nuevamente a todos los visitantes.",
+    "note": "Útil después de controlar bots o spam externo.",
+    "tags": ["followersoff", "abrir", "chat"]
+  },
+  {
+    "group": "Puertas del Reino",
+    "icon": "👑",
+    "title": "Solo subs",
+    "command": "/subscribers",
+    "syntax": "/subscribers",
+    "description": "Activa el modo solo suscriptores en momentos de caos extremo.",
+    "note": "Medida fuerte; usar solo si Zawa lo permite.",
+    "tags": ["subscribers", "subs", "modo"]
+  },
+  {
+    "group": "Puertas del Reino",
+    "icon": "🌌",
+    "title": "Quitar solo subs",
+    "command": "/subscribersoff",
+    "syntax": "/subscribersoff",
+    "description": "Devuelve el chat a su apertura normal después de un bloqueo fuerte.",
+    "note": "Confirma que el chat esté estable antes de quitarlo.",
+    "tags": ["subscribersoff", "subs", "abrir"]
+  },
+  {
+    "group": "Ritual de cierre",
+    "icon": "📣",
+    "title": "Raid",
+    "command": "/raid",
+    "syntax": "/raid canal",
+    "description": "Envía el Reino hacia otro canal al cerrar directo.",
+    "note": "Ejemplo: /raid nombreDelCanal",
+    "tags": ["raid", "cierre", "stream"]
+  },
+  {
+    "group": "Ritual de cierre",
+    "icon": "🛑",
+    "title": "Cancelar raid",
+    "command": "/unraid",
+    "syntax": "/unraid",
+    "description": "Cancela una raid preparada antes de que se ejecute.",
+    "note": "Útil si se escribió mal el canal o Zawa cambia de objetivo.",
+    "tags": ["unraid", "cancelar", "raid"]
+  }
+]

@@ -26,6 +26,7 @@
     <nav class="nav" aria-label="Navegación principal">
       <a href="#senda" data-view="senda">La Senda</a>
       <a href="#grimorio" data-view="pergaminos">Pergaminos</a>
+      <a href="#sala-mods" data-view="mods">Sala de Mods</a>
       <a href="#glosario" data-view="glosario">Glosario del Reino</a>
       <a href="#gloria" data-view="altares" id="navAltares">Altares de la Gloria</a>
       <a href="#rangos" data-view="rangos">Rangos</a>
@@ -490,6 +491,57 @@
       </div>
 
 <div class="command-grid" id="commandGrid"></div>
+      </div>
+    </section>
+
+    <section id="sala-mods" class="section mods-section" aria-labelledby="mods-title">
+      <div class="section-head">
+        <div>
+          <span class="kicker">Cámara reservada</span>
+          <h2 id="mods-title">Sala de Mods</h2>
+        </div>
+        <p>Un espacio rápido para que el Consejo no pierda comandos importantes durante el directo.</p>
+      </div>
+
+      <div class="mods-shell" id="modsShell" data-locked="true">
+        <div class="mods-lock-card" id="modsLockCard">
+          <div class="mods-sigil" aria-hidden="true">◆</div>
+          <div>
+            <span class="mods-eyebrow">Sello de entrada</span>
+            <h3>Acceso del Consejo</h3>
+            <p>Introduce el sello de mod para revelar los comandos reservados. El acceso solo dura durante esta sesión del navegador.</p>
+          </div>
+
+          <form class="mods-form" id="modsAccessForm" autocomplete="off">
+            <label for="modAccessKey">Sello de mod</label>
+            <div class="mods-input-row">
+              <input id="modAccessKey" type="password" inputmode="text" autocomplete="off" autocapitalize="off" spellcheck="false" placeholder="Escribe el sello" />
+              <button class="pixel-btn primary" type="submit">Abrir sala</button>
+            </div>
+            <p class="mods-feedback" id="modsFeedback" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+
+        <div class="mods-command-room" id="modsCommandRoom" hidden>
+          <div class="mods-room-head">
+            <div>
+              <span class="mods-eyebrow">Consejo activo</span>
+              <h3>Comandos de moderación</h3>
+              <p>Lista editable desde <code>data/mod-commands.json</code>. Úsala como chuleta rápida durante el stream.</p>
+            </div>
+            <button class="tiny-btn" id="modsLockAgain" type="button">Sellar sala</button>
+          </div>
+
+          <div class="mods-tools">
+            <label class="mods-search" for="modsSearchInput">
+              Buscar comando mod
+              <input id="modsSearchInput" type="search" placeholder="Ejemplo: ban, slow, raid, clear..." autocomplete="off" />
+            </label>
+          </div>
+
+          <div class="mods-command-grid" id="modsCommandGrid" aria-live="polite"></div>
+          <div class="mods-empty" id="modsEmptyState" hidden>Ningún comando del Consejo responde a esa búsqueda.</div>
+        </div>
       </div>
     </section>
 <section class="section" id="rangos">
