@@ -10286,3 +10286,81 @@
   .zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(2){--x:58px;--y:-136px;--s:.76;}
 }
 
+
+
+/* FIX Zawa 2026-06-19: sello central sin letras cortadas en PC.
+   El problema venía de dos sitios: posiciones demasiado pegadas al borde del stage
+   y el logo quedando por encima del texto en el stacking context. */
+.zawa-logo-sanctum,
+.artifact-panel.codex-artifact.zawa-logo-sanctum,
+.zawa-sanctum-wrap,
+.zawa-emblem-stage,
+.zawa-mods-panel{
+  overflow:visible!important;
+  clip:auto!important;
+  clip-path:none!important;
+  -webkit-clip-path:none!important;
+}
+
+.zawa-emblem-stage .zawa-word,
+.zawa-emblem-stage .zawa-rune,
+.zawa-emblem-stage .zawa-mods-panel strong{
+  overflow:visible!important;
+  clip:auto!important;
+  clip-path:none!important;
+  -webkit-clip-path:none!important;
+  text-overflow:clip!important;
+  max-width:none!important;
+}
+
+.zawa-emblem-stage .zawa-word{
+  z-index:35!important;
+}
+
+.zawa-emblem-stage .zawa-mods-panel{
+  z-index:36!important;
+}
+
+.zawa-emblem-stage .zawa-mods-panel strong{
+  z-index:37!important;
+}
+
+.zawa-emblem-stage .zawa-logo-core{
+  z-index:20!important;
+}
+
+/* ALMAS ya no queda pegado al borde derecho: evita que la S se corte. */
+.zawa-emblem-stage .zw-2{
+  --x:218px!important;
+  --y:20px!important;
+  --r:9deg!important;
+  --s:1.04!important;
+}
+
+/* EdGhost ya no queda pegado al borde izquierdo: evita que la E se corte. */
+.zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(1){
+  --x:-214px!important;
+  --y:82px!important;
+  --r:-18deg!important;
+  --s:1.02!important;
+}
+
+/* Lilith queda separada del logo y dentro de zona segura. */
+.zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(2){
+  --x:154px!important;
+  --y:-194px!important;
+  --r:12deg!important;
+  --s:.90!important;
+}
+
+@media (max-width:900px){
+  .zawa-emblem-stage .zw-2{--x:176px!important;--y:10px!important;}
+  .zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(1){--x:-182px!important;--y:62px!important;}
+  .zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(2){--x:98px!important;--y:-166px!important;--s:.84!important;}
+}
+
+@media (max-width:580px){
+  .zawa-emblem-stage .zw-2{--x:124px!important;--y:6px!important;}
+  .zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(1){--x:-122px!important;--y:52px!important;}
+  .zawa-emblem-stage .zawa-mods-panel strong:nth-of-type(2){--x:42px!important;--y:-136px!important;--s:.70!important;}
+}
