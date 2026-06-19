@@ -9954,8 +9954,8 @@
 }
 
 /* ─────────────────────────────────────────────
-   Antes de abrir el Grimorio — versión visual corregida
-   Sustituye La Senda del Viajero con estructura Master/Detail real.
+   La Senda — versión visual corregida
+   La Senda usa estructura Master/Detail real.
 ───────────────────────────────────────────── */
 .intro-reino-section{scroll-margin-top:96px;}
 .intro-reino{
