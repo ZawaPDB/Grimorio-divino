@@ -7369,6 +7369,32 @@
       align-items:start;
     }
 
+    .eventos-grid{
+      display:grid;
+      grid-template-columns:repeat(3, 1fr);
+      gap:18px;
+      align-items:stretch;
+    }
+    .evento-card{ display:flex; flex-direction:column; }
+    .evento-card p{ flex:1 1 auto; }
+    .evento-card .oracle-command-row{ margin-top:14px; }
+    .evento-meta{
+      display:flex;
+      flex-direction:column;
+      gap:4px;
+      margin:10px 0 4px;
+      font:700 12.5px/1.5 "Courier New",monospace;
+      color:var(--muted);
+    }
+    .evento-meta b{ color:var(--pro-color, var(--gold)); }
+
+    @media (max-width:1100px){
+      .eventos-grid{ grid-template-columns:1fr 1fr; }
+    }
+    @media (max-width:700px){
+      .eventos-grid{ grid-template-columns:1fr; }
+    }
+
     .rules-card pre{
       margin:14px 0 0;
       max-height:660px;

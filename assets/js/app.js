@@ -677,6 +677,7 @@ const realmNames = {
           document.querySelector('.hero'),
           byId('ruta'),
           byId('senda-nucleo'),
+          byId('eventos'),
           byId('staff-reino')
         ].filter(Boolean),
 
