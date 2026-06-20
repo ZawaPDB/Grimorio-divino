@@ -1574,6 +1574,13 @@ async function zawaSafeJson(path){
       pill.classList.toggle('on', online);
       pill.classList.toggle('off', !online);
 
+      const liveCta = document.getElementById('heroLiveCta');
+      if(liveCta && online){
+        liveCta.href = twitchOnline
+          ? 'https://www.twitch.tv/ZawarudoDB'
+          : 'https://kick.com/ZawaPDB';
+      }
+
       if(online){
         title.textContent = 'El Ojo de Zawa está abierto';
         text.textContent = 'El Ojo de Zawa está abierto y todo el Reino cae bajo su mirada: cada ofrenda, cada ritual y cada grito del chat quedan grabados en su pupila dorada.';
