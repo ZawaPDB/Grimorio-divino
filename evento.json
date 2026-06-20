@@ -1,1 +1,1 @@
-{"active": false, "title": "", "description": "", "commands": []}
+{"active": true, "title": "👹 Mini Boss del Ojo", "description": "Un Mini Boss surgió del Ojo de Zawa. Usa !atacar_mini para herirlo; si el reino lo derriba a tiempo, los atacantes se reparten la recompensa.", "commands": ["!atacar_mini"]}
