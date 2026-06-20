@@ -235,7 +235,6 @@
       await loadCommands();
       render();
     }catch(error){
-      console.warn('[Zawa] Pergaminos:', error);
       const empty = qs('#emptyState', root());
       if(empty){
         empty.textContent = 'No se pudo cargar data/commands-data.json. Revisa que exista en GitHub dentro de la carpeta data.';

@@ -1541,7 +1541,6 @@ window.ZAWA_PRO_PREVIEW = true;
 
     async function zawaLoadKingdomStatus(){
       // Preparado para futuro sistema del Reino:
-      // const status = await fetch('https://tu-api.com/api/status').then(r=>r.json());
       // Aquí queda en modo preview para no romper GitHub Pages.
       return null;
     }
@@ -1691,7 +1690,6 @@ async function zawaSafeJson(path){
           window.renderAltares(data);
           return;
         }catch(e){
-          console.warn('[Zawa] renderAltares nativo falló, usando fallback.', e);
         }
       }
 
@@ -1732,7 +1730,6 @@ async function zawaSafeJson(path){
         const data = await res.json();
         zawaRenderAltaresFromJson(data);
       }catch(e){
-        console.warn('[Zawa] No se pudo cargar altares-gloria.json', e);
       }
     }
 
@@ -1872,7 +1869,6 @@ function zawaFixAltarVerticalPlacement(){
       renderModCommands();
     }catch(error){
       grid.innerHTML = '<div class="mods-error">No se pudo cargar <code>data/mod-commands.json</code>. Revisa que el archivo esté subido en GitHub.</div>';
-      console.warn('[Zawa] Sala de Mods:', error);
     }
   }
 
