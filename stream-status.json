@@ -1,6 +1,6 @@
 {
   "twitch": {
-    "online": true
+    "online": false
   },
   "kick": {
     "online": false
